@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTPH | About Us</title>
+    <link rel="stylesheet" href="styles_about_us.css">
 </head>
 
 <body>
 
     <header>
-        <div class="logo">Must Try</div>      
+        <div class="logo">Must<br>Try &nbsp;PH</div>      
         <nav class="pages">
-            <a href="home.html"><strong>Home</strong></a></li> 
+            <a href="home.html"><strong>Home</strong></a>
             <a href="about_us.html"><strong>About</strong></a>
-            <a href="contact.html"><strong>Contact</strong></a>
+            <a href="#contact_page"><strong>Contact</strong></a>
             <a href="sign-up.html"><strong>Sign-up</strong></a>
         </nav>
     </header>  
 
-    <main class="main_content">
+    <main class="main_about_us">
 
         <div class="about_us_description">
             <h1 class="headings">About Us</h1>
@@ -57,12 +58,82 @@
             <div class="jannalyn_pic">
                 <img src="jannalyn_pic.jpg"alt="Janalyn">
             </div>
-
         </section>
-
     </main>
 
 
+    <main id="contact_page">
+        <h1 class="headings">Contact Us</h1>
+        <div>
+            <p>
+                We would love to hear from you! If you have any questions, feedback, or suggestions,<br>
+                please don’t hesitate to contact us. We do our best to respond to all inquiries <br>
+                 within 24-48 hours.
+            </p>
+            <p class="email">
+                <strong>Email: <em>musttry_ph@gmail.com</em></strong>
+            </p>
+            <p>You can also follow us on social media to stay up-to-date <br>
+                with the latest news and updates from our website.
+                <br> <br> 
+                You can also subscribe to our newsletter to get the latest recipes, <br>
+                kitchen tips, and cooking hacks delivered straight to your inbox. <br>
+                Be the first to discover new flavors, secret techniques, and exciting additions <br>
+                to our digital cookbook. Join food-loving community and let’s cook up something amazing together! 
+            </p>
+            <form>
+                <ul>
+                    <div class="form-group">
+                        <label for="last_name">Your Last Name:</label><br>
+                        <input type="text" id="last_name" name="last_name" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="first_name">Your First Name:</label><br>
+                        <input type="text" id="first_name" name="first_name" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="your_email">Your Email:</label><br>
+                        <input type="email" id="your_email" name="your_email" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="subject">Subject:</label><br>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="message">Message:</label><br>
+                        <textarea id="message" name="message" rows="5" cols="30" required></textarea>
+                    </div>
+                    <br>
+                    <button type="submit" onclick="sendMail()">Submit</button>
+                 </ul>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="logo">Must<br>Try &nbsp;PH</div>     
+        <p>Follow us </p>
+        <div class="social_media">
+            <img src="facebook.jpg" alt="facebook" width="20" height="30"> &nbsp;
+            <img src="instagram.jpg" alt="instagram" width="30" height="30"> &nbsp;
+            <img src="pinterest.jpg" alt="pinterest" width="30" height="30">&nbsp;
+            <img src="tiktok.jpg" alt="tiktok" width="25" height="30">&nbsp;
+        </div>
+
+        <nav class="pages">
+            <ul>
+                <a href="home.html"><strong>Home</strong></a> <br>
+                <a href="about_us.html"><strong>About</strong></a> <br>
+                <a href="#contact_page"><strong>Contact</strong></a><br>
+            </ul>
+        </nav>
+
+        <p>&copy; Copyright 2025 — MusttryPH. All rights reserved.</p>
+    </footer>
 
 </body>
 
