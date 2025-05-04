@@ -1,0 +1,642 @@
+/* ABOUT US & CONTACT */
+
+/* 
+ABOUT US PAGE
+*/
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.about_us_vid {
+    height: 100vh;
+    position: relative;
+}
+
+video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background-color: #e6e6e6;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Shrikhand', cursive;
+    font-size: 1.5rem;
+    color: #414b3b;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.pages {
+    display: flex;
+    gap: 1rem;
+    animation: fadeInRight 1s ease-out;
+}
+
+.pages a {
+    text-decoration: none;
+    color: #414b3b;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.pages a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #414b3b;
+    transition: width 0.3s ease;
+}
+
+.pages a:hover {
+    transform: translateY(-2px);
+}
+
+.pages a:hover::after {
+    width: 100%;
+}
+
+main {
+    background-color: #5d5340;
+    color: white;
+    padding: 2rem 2rem;
+    min-height: calc(100vh - 54px);
+}
+
+.main_about_us {
+    background-color: #5d5340;
+    color: white;
+    padding: 2rem 2rem;
+    min-height: calc(100vh - 54px);
+    position: relative;
+}
+
+.headings {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    color: #ffffff;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    position: relative;
+    text-align: center;
+    animation: fadeInDown 1s ease-out;
+}
+
+.subheading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+    animation: fadeInUp 1s ease-out 0.3s;
+    animation-fill-mode: both;
+}
+
+.about_us_description {
+    background-color: rgba(34, 33, 31, 0.7);
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    line-height: 2rem;
+    position: relative;
+    font-size: 1.2rem;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.about_us_description p {
+    background-color: rgba(196, 175, 99, 0.8);
+    padding: 2rem;
+    border-radius: 5px;
+    color: #333;
+    max-width: 80%;
+    margin: 0 auto;
+    animation: fadeIn 2s ease-out;
+}
+
+.team {
+    margin-top: 2rem;
+    position: relative;
+}
+
+.team_heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: #ffebeb;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    letter-spacing: 5px;
+    font-weight: 500;
+    text-align: center;
+    animation: fadeInDown 2s ease-out;
+}
+
+.team_info {
+    display: flex;
+    margin-bottom: 4rem;
+    position: relative;
+    height: auto;
+    min-height: 450px;
+    overflow: hidden;
+}
+
+.sherilyn_name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #ffebeb;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    position: absolute;
+    right: 30rem;
+    text-align: right;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.jannalyn_name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #ffebeb;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    position: absolute;
+    left: 33rem;
+    text-align: right;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.sherilyn_title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: #ffebeb;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    position: absolute;
+    right: 30rem;
+    text-align: right;
+    animation: fadeInLeft 1s ease-out 0.2s;
+    animation-fill-mode: both;
+}
+
+.jannalyn_title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: #ffebeb;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    position: absolute;
+    left: 33rem;
+    text-align: right;
+    animation: fadeInLeft 1s ease-out 0.2s;
+    animation-fill-mode: both;
+}
+
+.sherilyn_bio {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    background-color: rgba(196, 175, 99, 0.8);
+    padding: 2rem;
+    border-radius: 5px;
+    color: #333;
+    max-width: 60%;
+    position: absolute;
+    left: 33rem;    
+    margin-top: 6rem;
+    margin-right: 300px;
+    animation: fadeInLeft 1s ease-out 0.4s;
+    animation-fill-mode: both;
+    width: 30rem;
+    height: 25rem;
+    z-index: 1;}
+
+.jannalyn_bio {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    background-color: rgba(196, 175, 99, 0.8);
+    padding: 3rem;
+    border-radius: 5px;
+    color: #333;
+    max-width: 60%;
+    position: absolute;
+    left: 33rem;
+    margin-right: 80px;
+    margin-top: 6rem;
+    animation: fadeInLeft 1s ease-out 0.4s;
+    animation-fill-mode: both;
+    width: 30rem;
+    height: 30rem;
+    z-index: 1;
+}
+
+.sherilyn_pic {
+    position: absolute;
+    right: 8rem;
+    top: 0;
+    border-radius: 10px;
+    margin-top: 2rem;
+    overflow: hidden;
+    cursor: pointer;
+    right: 8rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    animation: fadeInRight 1s ease-out 0.6s;
+    animation-fill-mode: both;
+}
+
+.jannalyn_pic {
+    position: absolute;
+    left: 10rem;
+    top: 0;
+    border-radius: 10px;
+    margin-top: 2rem;
+    overflow: hidden;
+    cursor: pointer;
+    right: 40rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    animation: fadeInRight 1s ease-out 0.6s;
+    animation-fill-mode: both;
+}
+
+.sherilyn_pic img, .jannalyn_pic img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    transition: transform 3s ease;
+}
+
+/* ~~~~~~~~~~~~~~CONTACT PAGE~~~~~~~~~~~~~~~*/
+.contact_page {
+    background-color: #c4843c;
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.contact_page h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.contact_page p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.email {
+    font-size: 1.2rem;
+    margin: 2rem 0;
+    animation: fadeIn 1.5s ease-out 0.3s;
+    animation-fill-mode: both;
+}
+
+.contact_page form {
+    margin-top: 2rem;
+    background-color: #f3f3f3;
+    padding: 2rem;
+    border-radius: 10px;
+    color: black;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+}
+
+button {
+    background-color: #414b3b;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+}
+
+/*~~~~~~~~~~~~~~~~~~FOOTER~~~~~~~~~~~~~~~~~~~~*/
+footer {
+    background-color: #efe7dd;
+    color: #5d5340;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+footer .logo {
+    font-family: 'Shrikhand', cursive;
+    font-size: 2rem;
+    color: #5d5340;
+    display: inline-block;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-out;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    animation: fadeIn 1s ease-out 0.2s;
+    animation-fill-mode: both;
+}
+
+footer .social_media {
+    margin: 1rem 0 2rem;
+    animation: fadeIn 1s ease-out 0.4s;
+    animation-fill-mode: both;
+}
+
+footer .social_media img {
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+footer .social_media img:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+}
+
+footer .pages {
+    margin: 2rem 0;
+    animation: fadeIn 1s ease-out 0.6s;
+    animation-fill-mode: both;
+    }
+
+footer .pages ul {
+    list-style: none;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+footer .pages a {
+    display: inline-block;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    color: #5d5340;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .pages a:hover, 
+footer .social_media:hover,
+footer .logo:hover {
+    color: #dab347;
+}
+
+footer .pages a:hover {
+    transform: translateY(-3px);
+}
+
+footer p:last-child {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+footer p:last-child:hover {
+    color: #5d5340;
+}
+
+/* brown bar */
+footer::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #5d5340;
+}
+
+.to-top {
+    position: absolute;
+    right: 30px;
+    bottom: 90px;
+    width: 40px;
+    height: 40px;
+    background-color: #5d5340;
+    color: #f5f1e9;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.to-top:hover {
+    background-color: #dab347;
+}
+
+/* ~~~~~~~~~~~~~~~~~Animations~~~~~~~~~~~~ */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 3s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease, transform 3s ease;
+}
+
+.animate-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 1s ease, transform 3s ease;
+}
+
+.animate-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media screen and (max-width: 992px) {
+    .headings {
+        font-size: 3rem;
+    }
+    
+    .team_heading {
+        font-size: 2.5rem;
+    }
+    
+    .sherilyn_bio, .jannalyn_bio {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 350px;
+    }
+    
+    .sherilyn_pic, .jannalyn_pic {
+        right: 50%;
+        transform: translateX(50%);
+        top: auto;
+        bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .logo {
+        margin-bottom: 1rem;
+    }
+    
+    .headings {
+        font-size: 2.5rem;
+    }
+    
+    .subheading {
+        font-size: 1.5rem;
+    }
+    
+    .about_us_description p {
+        max-width: 95%;
+    }
+}
