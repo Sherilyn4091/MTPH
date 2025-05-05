@@ -1,7 +1,7 @@
 /* ABOUT US & CONTACT */
 
 /* 
-ABOUT US PAGE
+ABOUT US PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
 *, ::before, ::after {
@@ -38,21 +38,36 @@ video {
 }
 
 header {
+    background-color: rgba(245, 245, 239, 0.95); 
+    padding: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem;
-    background-color: #e6e6e6;
-    border-bottom: 1px solid #ccc;
+    position: sticky;
     width: 100%;
-    z-index: 100;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
 }
 
-.logo {
+header.sticky {
+    padding: 5px;
+    background-color: rgba(245, 245, 239, 0.95); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
     font-family: 'Shrikhand', cursive;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #414b3b;
     animation: fadeInLeft 1s ease-out;
+    margin-left: 2rem;
+}
+
+header .logo:hover {
+    color: #dab347;
+    cursor: pointer;
 }
 
 .pages {
@@ -66,6 +81,7 @@ header {
     color: #414b3b;
     transition: color 0.3s ease, transform 0.3s ease;
     position: relative;
+    margin-right: 2rem;
 }
 
 .pages a::after {
@@ -81,12 +97,14 @@ header {
 
 .pages a:hover {
     transform: translateY(-2px);
+    color: #c4843c;
 }
 
 .pages a:hover::after {
     width: 100%;
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 main {
     background-color: #5d5340;
     color: white;
@@ -305,7 +323,7 @@ main {
     transition: transform 3s ease;
 }
 
-/* ~~~~~~~~~~~~~~CONTACT PAGE~~~~~~~~~~~~~~~*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CONTACT PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .contact_page {
     background-color: #c4843c;
     color: white;
@@ -336,6 +354,11 @@ main {
     margin: 2rem 0;
     animation: fadeIn 1.5s ease-out 0.3s;
     animation-fill-mode: both;
+}
+
+.email:hover {
+        color: #4b3b11;
+        cursor: pointer;
 }
 
 .contact_page form {
@@ -385,123 +408,89 @@ button:hover {
     transform: translateY(-3px);
 }
 
-/*~~~~~~~~~~~~~~~~~~FOOTER~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Footer~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 footer {
     background-color: #efe7dd;
-    color: #5d5340;
+    color: #764b36;
     padding: 3rem 2rem;
     position: relative;
 }
 
+
 footer .logo {
     font-family: 'Shrikhand', cursive;
     font-size: 2rem;
-    color: #5d5340;
+    color: #764b36;
     display: inline-block;
-    margin-bottom: 1rem;
-    animation: fadeIn 1s ease-out;
+    margin-bottom: 1.3rem;
 }
 
 footer p {
     margin: 0.5rem 0;
-    animation: fadeIn 1s ease-out 0.2s;
-    animation-fill-mode: both;
 }
 
 footer .social_media {
-    margin: 1rem 0 2rem;
-    animation: fadeIn 1s ease-out 0.4s;
-    animation-fill-mode: both;
+    margin: 0.2rem;    
 }
 
-footer .social_media img {
-    margin: 0 10px;
-    transition: transform 0.3s ease;
+img {
+    margin: 0.3rem;
+}
+
+.footer_columns {
+    display: flex;
+    margin: 2rem;
+}
+
+.footer-column {
+    color: #733d23;
+    width: 25%;
+    margin-right: 5rem;
+    position: bottom;
+    transition: color 0.3s;
+    animation: fadeIn 3s ease-out 0s;
+
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li, 
+.footer-column ul li a,
+.footer-column ul li p {
+    text-decoration: none;
+    margin-bottom: 10px;
+    margin-top: 1rem;
+    color: #733d23;    
+}
+
+footer .logo:hover, 
+.footer-column img:hover {
+    transform: translateY(-10px);
+    color: #dab347;
     cursor: pointer;
 }
 
-footer .social_media img:hover {
-    transform: translateY(-5px);
-    filter: brightness(1.2);
+.footer-column ul li a:hover, 
+.footer-column ul li p:hover {
+    color: #dab347;
+    cursor: pointer;
 }
 
-footer .pages {
-    margin: 2rem 0;
-    animation: fadeIn 1s ease-out 0.6s;
-    animation-fill-mode: both;
-    }
-
-footer .pages ul {
-    list-style: none;
+.copyright {
+    color: #efe7dd;
     text-align: center;
     position: relative;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    padding: 1.7rem;
+    background-color: #764b36;
+    width: 100rem;
+    margin-left: -2rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
 }
 
-footer .pages a {
-    display: inline-block;
-    margin: 0.5rem 0;
-    text-decoration: none;
-    color: #5d5340;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-footer .pages a:hover, 
-footer .social_media:hover,
-footer .logo:hover {
-    color: #dab347;
-}
-
-footer .pages a:hover {
-    transform: translateY(-3px);
-}
-
-footer p:last-child {
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-footer p:last-child:hover {
-    color: #5d5340;
-}
-
-/* brown bar */
-footer::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background-color: #5d5340;
-}
-
-.to-top {
-    position: absolute;
-    right: 30px;
-    bottom: 90px;
-    width: 40px;
-    height: 40px;
-    background-color: #5d5340;
-    color: #f5f1e9;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.to-top:hover {
-    background-color: #dab347;
-}
-
-/* ~~~~~~~~~~~~~~~~~Animations~~~~~~~~~~~~ */
+/* Animations~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
