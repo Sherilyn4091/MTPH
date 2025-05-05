@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTPH | About Us</title>
     <link rel="stylesheet" href="about_us.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Shrikhand&display=swap">
 </head>
 
 <body> 
-    <header>
-        <div class="logo">Must<br>Try&nbsp;PH</div>      
+    <header id="header_top" class="header_top">
+        <div id="logo" class="logo">Must<br>Try&nbsp;PH</div>      
+
         <nav class="pages">
             <a href="home.html"><strong>Home</strong></a>
             <a href="about_us.html"><strong>About</strong></a>
@@ -75,9 +75,9 @@
         </section>
     </main>
 
-    <!-- CONTACT PAGE -->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CONTACT PAGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section id="contact_page" class="contact_page">
-        <h1 class="headings">Contact Us</h1>
+        <h1 class="headings">C o n t a c t&nbsp;&nbsp;&nbsp;U s</h1>
         <div>
             <p>
                 We would love to hear from you! If you have any questions, feedback, or suggestions,<br>
@@ -96,6 +96,7 @@
                 Be the first to discover new flavors, secret techniques, and exciting additions <br>
                 to our digital cookbook. Join food-loving community and let's cook up something amazing together! 
             </p>
+            
             <form>
                 <div class="form-group">
                     <label for="last_name">Your Last Name:</label>
@@ -127,28 +128,44 @@
         </div>
     </section>
 
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <footer>
-        <div class="logo">Must<br>Try &nbsp;PH</div>     
-        <p>Follow us </p>
-        <div class="social_media">
-            <img src="facebook.jpg" alt="facebook" width="20" height="30">
-            <img src="instagram.jpg" alt="instagram" width="30" height="30">
-            <img src="pinterest.jpg" alt="pinterest" width="30" height="30">
-            <img src="tiktok.jpg" alt="tiktok" width="25" height="30">
+        <div class="footer_columns">
+
+            <div class="footer-column">
+                <div class="logo">Must<br>Try &nbsp;PH</div>     
+                <p>Follow us </p>
+
+                <div class="social_media">
+                    <img src="facebook.jpg" alt="facebook" width="20" height="30">
+                    <img src="instagram.jpg" alt="instagram" width="30" height="30">
+                    <img src="pinterest.jpg" alt="pinterest" width="30" height="30">
+                    <img src="tiktok.jpg" alt="tiktok" width="25" height="30">
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="about_us.html#contact_page">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <ul>
+                    <li><p>Privacy Policy</p></li>
+                    <li><p>Terms & Conditions</p></li>
+                    <li><p>Disclaimer</p></li>
+                </ul>
+            </div>
         </div>
 
-        <nav class="pages">
-            <ul>
-                <a href="home.html"><strong>Home</strong></a><br>
-                <a href="about_us.html"><strong>About</strong></a><br>
-                <a href="#contact_page"><strong>Contact</strong></a><br>
-            </ul>
-        </nav>
-        <hr>
-        <p class="copyright">&copy; Copyright 2025 — MusttryPH. All rights reserved.</p>
-        
-        <a href="#" class="to-top">↑</a>
-    </footer>
+        <div class="copyright">
+            <p>&copy; 2025 MustTryPH. All rights reserved.</p>
+        </div>
+     </footer>
+    
     <script src="about_us-contact.js"></script>
 </body>
 

@@ -1,17 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
-// Add smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-    
-//header sticky
+
+//header sticky~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     const header = document.querySelector('header');
     const sticky = header.offsetTop;
     
@@ -29,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(checkVisibility, 100);
 });
 
-// animation
+// animations~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function addAnimationClasses() {
-    //team section elements~~~~~~~~~~~~~~~
+
     document.querySelectorAll('.team_heading, .contact_page h1').forEach(el => {
         el.classList.add('animate-on-scroll');
     });
@@ -53,7 +42,7 @@ function addAnimationClasses() {
     });
 }
 
-// check elements are visible in viewport
+// check elements are visible~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function checkVisibility() {
     const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-left, .animate-right');
     
@@ -68,7 +57,7 @@ function checkVisibility() {
     });
 }
 
-// form submission
+// form submission~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function sendMail() {
     const form = document.querySelector('form');
     form.addEventListener('submit', function(e) {
@@ -85,7 +74,7 @@ function sendMail() {
             return;
         }
         
-        alert('Hi, Thank you for your message! We will get back to you soon, Happy Cooking:>.');
+        alert('Hello, Thank you for your message! We will get back to you soon, Happy Cooking:>.');
         
         form.reset();
     });
