@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('desser1.webp') no-repeat center center;
+    background: url('DESSERT.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: scroll;
     color: #391b1b;
@@ -139,6 +139,11 @@ nav a:hover {
 .explore-recipes:hover {
     background-color: #5a3a24;
     transform: translateY(-5px) scale(1.05);
+}
+
+.explore-recipes.clicked {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
 }
 
 @media (max-width: 768px) {
