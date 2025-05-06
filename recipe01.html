@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maruya (Banana Fritters) Recipe</title>
+  <link rel="stylesheet" href="recipe-style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffef8;
+      padding: 30px;
+      color: #4a3607;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      color: #6b4f1d;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    .label {
+      font-size: 14px;
+      color: #a87420;
+    }
+
+    .servings-container {
+      position: relative;
+    }
+
+    .slider {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .servings-container:hover .slider {
+      opacity: 1;
+    }
+
+    .ingredients ul {
+      margin-left: 20px;
+    }
+
+    .steps ol {
+      margin-left: 20px;
+    }
+
+    .timer {
+      margin-top: 5px;
+    }
+
+    .timer button {
+      padding: 4px 8px;
+      margin-right: 5px;
+      background: #f0c66b;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .timer .time {
+      font-weight: bold;
+    }
+
+    .back {
+      display: block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #6b4f1d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Maruya (Banana Fritters)</h1>
+
+    <div class="info-grid">
+      <div>
+        <div class="label">Prep Time</div>
+        <div id="prepTime">10 minutes</div>
+      </div>
+      <div>
+        <div class="label">Cook Time</div>
+        <div id="cookTime">10 minutes</div>
+      </div>
+      <div>
+        <div class="label">Total Time</div>
+        <div id="totalTime">20 minutes</div>
+      </div>
+      <div>
+        <div class="label">Course</div>
+        <div>Snacks/Merienda</div>
+      </div>
+      <div>
+        <div class="label">Cuisine</div>
+        <div>Filipino</div>
+      </div>
+      <div class="servings-container">
+        <div class="label">Servings</div>
+        <div id="servings">2</div>
+        <input type="range" min="1" max="10" value="2" class="slider" id="servingsSlider">
+      </div>
+    </div>
+
+    <section class="ingredients">
+      <h2>Ingredients</h2>
+      <ul id="ingredientsList"></ul>
+    </section>
+
+    <section class="steps">
+      <h2>Instructions</h2>
+      <ol>
+        <li>
+          Mix the flour, sugar, baking powder, salt, egg, milk and butter in a bowl. Then add the bananas and mix well.
+          <div class="timer">
+            <button onclick="startTimer(this)">Start</button>
+            <button onclick="pauseTimer(this)">Pause</button>
+            <button onclick="resetTimer(this)">Reset</button>
+            <span class="time">00:00</span>
+          </div>
+        </li>
+        <li>
+          In a pre-heated pan with oil, using a ladle, scoop the batter with bananas into the oil and fry until golden brown. Remove from pan and drain on paper towels.
+          <div class="timer">
+            <button onclick="startTimer(this)">Start</button>
+            <button onclick="pauseTimer(this)">Pause</button>
+            <button onclick="resetTimer(this)">Reset</button>
+            <span class="time">00:00</span>
+          </div>
+        </li>
+        <li>
+          Dust with sugar before serving.
+          <div class="timer">
+            <button onclick="startTimer(this)">Start</button>
+            <button onclick="pauseTimer(this)">Pause</button>
+            <button onclick="resetTimer(this)">Reset</button>
+            <span class="time">00:00</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <a href="recipe.html" class="back">← Back to Recipes</a>
+  </div>
+
+  <script>
+    const baseServings = 2;
+    const basePrep = 10;
+    const baseCook = 10;
+
+    const ingredients = [
+      { text: "1 Cup Flour", amount: 1, unit: "Cup Flour" },
+      { text: "1/2 Cup sugar", amount: 0.5, unit: "Cup sugar" },
+      { text: "1 teaspoon baking powder", amount: 1, unit: "teaspoon baking powder" },
+      { text: "1/4 teaspoon Salt", amount: 0.25, unit: "teaspoon Salt" },
+      { text: "1 medium Egg", amount: 1, unit: "medium Egg" },
+      { text: "1 Cup milk", amount: 1, unit: "Cup milk" },
+      { text: "2 teaspoon Butter melted", amount: 2, unit: "teaspoon Butter melted" },
+      { text: "1 Cup Oil", amount: 1, unit: "Cup Oil" },
+      { text: "6 banana (saba), sliced", amount: 6, unit: "banana (saba), sliced" },
+      { text: "sugar for sprinkling", amount: null, unit: "sugar for sprinkling" }
+    ];
+
+    const servingsDisplay = document.getElementById('servings');
+    const prepDisplay = document.getElementById('prepTime');
+    const cookDisplay = document.getElementById('cookTime');
+    const totalDisplay = document.getElementById('totalTime');
+    const slider = document.getElementById('servingsSlider');
+    const ingredientsList = document.getElementById('ingredientsList');
+
+    function updateRecipe(servings) {
+      servingsDisplay.textContent = servings;
+
+      const ratio = servings / baseServings;
+
+      prepDisplay.textContent = `${Math.round(basePrep * ratio)} minutes`;
+      cookDisplay.textContent = `${Math.round(baseCook * ratio)} minutes`;
+      totalDisplay.textContent = `${Math.round((basePrep + baseCook) * ratio)} minutes`;
+
+      ingredientsList.innerHTML = '';
+
+      ingredients.forEach(item => {
+        const li = document.createElement('li');
+        if (item.amount !== null) {
+          const newAmt = item.amount * ratio;
+          const formatted = newAmt % 1 === 0 ? newAmt : newAmt.toFixed(2);
+          li.textContent = `${formatted} ${item.unit}`;
+        } else {
+          li.textContent = item.unit;
+        }
+        ingredientsList.appendChild(li);
+      });
+    }
+
+    slider.addEventListener('input', () => {
+      updateRecipe(parseInt(slider.value));
+    });
+
+    updateRecipe(baseServings); 
+
+    // Timers
+    let intervals = [];
+
+    function startTimer(button) {
+      const container = button.parentElement;
+      const display = container.querySelector(".time");
+
+      if (container.dataset.index === undefined) {
+        container.dataset.index = intervals.length;
+        intervals.push({ interval: null, seconds: 0 });
+      }
+
+      const idx = container.dataset.index;
+      if (intervals[idx].interval) return;
+
+      intervals[idx].interval = setInterval(() => {
+        intervals[idx].seconds++;
+        const mins = String(Math.floor(intervals[idx].seconds / 60)).padStart(2, '0');
+        const secs = String(intervals[idx].seconds % 60).padStart(2, '0');
+        display.textContent = `${mins}:${secs}`;
+      }, 1000);
+    }
+
+    function pauseTimer(button) {
+      const container = button.parentElement;
+      const idx = container.dataset.index;
+      if (intervals[idx]) {
+        clearInterval(intervals[idx].interval);
+        intervals[idx].interval = null;
+      }
+    }
+
+    function resetTimer(button) {
+      const container = button.parentElement;
+      const display = container.querySelector(".time");
+      const idx = container.dataset.index;
+      if (intervals[idx]) {
+        clearInterval(intervals[idx].interval);
+        intervals[idx].interval = null;
+        intervals[idx].seconds = 0;
+        display.textContent = "00:00";
+      }
+    }
+  </script>
+</body>
+</html>
