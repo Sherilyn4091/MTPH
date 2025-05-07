@@ -1,0 +1,382 @@
+*, ::before, 
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f5f0e8;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* STICKY~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+header {
+    background-color: rgba(245, 245, 239, 0.95); 
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+header.sticky {
+    padding: 5px;
+    background-color: rgba(245, 245, 239, 0.95); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-family: 'Shrikhand', cursive;
+    font-size: 1.3rem;
+    color: #414b3b;
+    animation: fadeInLeft 1s ease-out;
+    margin-left: 2rem;
+}
+
+header .logo:hover {
+    color: #dab347;
+    cursor: pointer;
+}
+
+.pages {
+    display: flex;
+    gap: 1rem;
+    animation: fadeInRight 1s ease-out;
+}
+
+.pages a {
+    text-decoration: none;
+    color: #414b3b;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    margin-right: 2rem;
+}
+
+.pages a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #414b3b;
+    transition: width 0.3s ease;
+}
+
+.pages a:hover {
+    color: #dab347;
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+.pages a:hover::after {
+    width: 100%;
+}
+
+/* Main Content~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.container_external_background {
+    background: url(leaf.jpg);
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.profile_container {
+    max-width: 80%;
+    min-height: 50rem;
+    margin: 0 auto;
+    padding: 4rem;
+    background-color: #5b4c47;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px rgba(32, 32, 32, 0.50);
+    color: #fff;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #a7d9f6, #ffffff, #89c672);
+    margin-bottom: 15px;
+}
+
+.avatar-image {
+    width: 100%;
+    height: auto;
+}
+
+.profile-greeting {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0;
+    color: #ffffff;
+}
+
+.favorite_title {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.star-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.recipe-card {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-card.removing {
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.favorite-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.undo_favorite {
+    width: 20px;
+    height: 20px;
+}
+
+.recipe-image {
+    height: 150px;
+    overflow: hidden;
+}
+
+.recipe-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recipe-info {
+    padding: 15px;
+    color: #333;
+}
+
+.recipe-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    margin: 0 0 5px 0;
+}
+
+.recipe-info p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Footer~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+footer {
+    background-color: #efe7dd;
+    color: #764b36;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+footer .logo {
+    font-family: 'Shrikhand', cursive;
+    font-size: 2rem;
+    color: #764b36;
+    display: inline-block;
+    margin-bottom: 1.3rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer .social_media {
+    margin: 0.2rem;    
+}
+
+img {
+    margin: 0.3rem;
+}
+
+.footer_columns {
+    display: flex;
+    margin: 2rem;
+}
+
+.footer-column {
+    color: #733d23;
+    width: 25%;
+    margin-right: 5rem;
+    position: bottom;
+    transition: color 0.3s;
+    animation: fadeIn 3s ease-out 0s;
+
+}
+
+.footer-column ul li, 
+.footer-column ul li a {
+    margin-bottom: 10px;
+    margin-top: 1rem;
+    color: #733d23;    
+}
+
+footer .logo:hover, 
+.footer-column img:hover {
+    transform: translateY(-10px);
+    color: #dab347;
+    cursor: pointer;
+}
+
+.footer-column ul li a:hover, 
+.footer-column ul li p:hover {
+    color: #dab347;
+    cursor: pointer;
+}
+
+.copyright {
+    color: #efe7dd;
+    text-align: center;
+    position: relative;
+    padding: 1.7rem;
+    background-color: #764b36;
+    width: 100rem;
+    margin-left: -2rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+/* Responsive Styles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .footer-column {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}    
+    .footer_columns {
+        flex-direction: column;
+    }
+
+    /* LOADING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5d5340;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s;
+  }
+  
+  .loading-bar {
+    width: 300px;
+    height: 50px;
+    background-color: #3f3a2f;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .daisy {
+    width: 40px;
+    height: 40px;
+    background: url('daisy.png') no-repeat center/contain;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    cursor: grab;
+    transition: filter 0.3s ease;
+  }
+  
+  
+  
+  #loading-screen.fade-out {
+    animation: fadeOut 1s ease forwards;
+  }
+
+  #loading-screen.boom {
+    background-color: #d3c163;
+    transition: background-color 0.5s;
+  }
+  
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes boom {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }

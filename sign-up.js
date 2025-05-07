@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const header = document.getElementById('header');
+
+    const storedName = localStorage.getItem('firstName');
+    if (storedName) {
+        updateUserMenu(storedName);
+    }
     
     // Sticky ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     window.addEventListener('scroll', function() {
@@ -38,7 +43,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             alert('Sign up successful! Welcome to Must Try PH!');
-            signupForm.reset();
+            // signupForm.reset();
+
+            localStorage.setItem('firstName', firstName);
+            updateUserMenu(firstName);
+
+            window.location.href = 'home.html';
         });
     }
     
@@ -47,5 +57,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
+
+    function updateUserMenu(firstName) {
+        const userMenu = document.getElementById('userMenu');
+        userMenu.innerHTML = `
+            <span class="user-name">${firstName}</span>
+            <div class="dropdown">
+                <a href="#">View Profile</a>
+                <a href="#" id="logoutBtn">Log Out</a>
+            </div>
+        `;
+    
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('firstName');
+            // location.reload(); // Refresh page to reset to Sign-up
+        });
+    }
+    
         
 });
