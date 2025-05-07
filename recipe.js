@@ -47,7 +47,6 @@ document.querySelectorAll('.recipe-card').forEach(card => {
       filterRecipesByBudget(budgetValue);
     });
   
-    // Initial display based on default slider value
     filterRecipesByBudget(parseInt(budgetSlider.value, 10));
   }
   

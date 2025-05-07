@@ -1,3 +1,4 @@
+
 let intervals = [];
 
 function startTimer(button) {
