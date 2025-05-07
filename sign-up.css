@@ -1,0 +1,355 @@
+*, ::before, 
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f5f0e8;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* STICKY~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+header {
+    background-color: rgba(245, 245, 239, 0.95); 
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+header.sticky {
+    padding: 5px;
+    background-color: rgba(245, 245, 239, 0.95); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-family: 'Shrikhand', cursive;
+    font-size: 1.3rem;
+    color: #414b3b;
+    animation: fadeInLeft 1s ease-out;
+    margin-left: 2rem;
+}
+
+header .logo:hover {
+    color: #dab347;
+    cursor: pointer;
+}
+
+.pages {
+    display: flex;
+    gap: 1rem;
+    animation: fadeInRight 1s ease-out;
+}
+
+.pages a {
+    text-decoration: none;
+    color: #414b3b;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    margin-right: 2rem;
+}
+
+.pages a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #414b3b;
+    transition: width 0.3s ease;
+}
+
+.pages a:hover {
+    color: #dab347;
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+.pages a:hover::after {
+    width: 100%;
+}
+
+/* DROP DOWN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.user_menu {
+    position: relative;
+    display: inline-block;
+}
+
+.user-name {
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 120px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1;
+    top: 100%;
+    right: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background 0.2s;
+}
+
+.dropdown a:hover {
+    background-color: #f2f2f2;
+}
+
+.user_menu:hover .dropdown {
+    display: block;
+}
+
+/* Sign Up Panel~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+main {
+    min-height: calc(100vh - 70px - 200px);
+    background-image: url('sign-up.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.signup_container {
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.80);
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: fadeIn 0.8s ease;
+
+    color: #733d23;
+    font-size: 28px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.sign-up_title {
+    font-family: cormorant garamond;
+}
+
+/* Form inputs~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: border-color 1s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #000000;
+}
+
+.signup_button {
+    width: 100%;
+    padding: 12px;
+    background-color: #a65628;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup_button:hover {
+    background-color: #8f4820;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.checkbox label {
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+}
+
+.login {
+    text-align: center;
+    margin: 15px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.login_page {
+    color: #a65628;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.login_page:hover, 
+span:hover {
+    color: #733d23;
+    text-decoration: underline;
+}
+
+.terms-notice {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 15px;
+}
+
+.terms, 
+.span:hover {
+    color: #733d23;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #764b36;
+}
+
+ul {
+    list-style: none;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Footer~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+footer {
+    background-color: #efe7dd;
+    color: #764b36;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+footer .logo {
+    font-family: 'Shrikhand', cursive;
+    font-size: 2rem;
+    color: #764b36;
+    display: inline-block;
+    margin-bottom: 1.3rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer .social_media {
+    margin: 0.2rem;    
+}
+
+img {
+    margin: 0.3rem;
+}
+
+.footer_columns {
+    display: flex;
+    margin: 2rem;
+}
+
+.footer-column {
+    color: #733d23;
+    width: 25%;
+    margin-right: 5rem;
+    position: bottom;
+    transition: color 0.3s;
+    animation: fadeIn 3s ease-out 0s;
+
+}
+
+.footer-column ul li, 
+.footer-column ul li a {
+    margin-bottom: 10px;
+    margin-top: 1rem;
+    color: #733d23;    
+}
+
+footer .logo:hover, 
+.footer-column img:hover {
+    transform: translateY(-10px);
+    color: #dab347;
+    cursor: pointer;
+}
+
+.footer-column ul li a:hover, 
+.footer-column ul li p:hover {
+    color: #dab347;
+    cursor: pointer;
+}
+
+.copyright {
+    color: #efe7dd;
+    text-align: center;
+    position: relative;
+    padding: 1.7rem;
+    background-color: #764b36;
+    width: 100rem;
+    margin-left: -2rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+/* Responsive Styles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .footer-column {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .signup_container {
+        width: 100%;
+    }
+
+    .form-group input {
+        padding: 10px;
+    }
+    
+    .footer_columns {
+        flex-direction: column;
+    }
+}
