@@ -14,6 +14,7 @@ body {
     overflow-x: hidden;
 }
 
+/* STICKY~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 header {
     background-color: rgba(245, 245, 239, 0.95); 
     padding: 10px 0;
@@ -82,6 +83,47 @@ header .logo:hover {
     width: 100%;
 }
 
+/* DROP DOWN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.user_menu {
+    position: relative;
+    display: inline-block;
+}
+
+.user-name {
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 120px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1;
+    top: 100%;
+    right: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background 0.2s;
+}
+
+.dropdown a:hover {
+    background-color: #f2f2f2;
+}
+
+.user_menu:hover .dropdown {
+    display: block;
+}
+
 /* Sign Up Panel~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 main {
     min-height: calc(100vh - 70px - 200px);
@@ -110,16 +152,11 @@ main {
     text-align: center;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 .sign-up_title {
     font-family: cormorant garamond;
 }
 
-/* Form inputs~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Form inputs~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .form-group {
     margin-bottom: 20px;
 }
@@ -180,13 +217,14 @@ main {
     font-size: 14px;
 }
 
-.loglogin_pagek {
+.login_page {
     color: #a65628;
     font-weight: 600;
     transition: color 0.3s;
 }
 
-.login_page:hover, span:hover {
+.login_page:hover, 
+span:hover {
     color: #733d23;
     text-decoration: underline;
 }
@@ -221,7 +259,6 @@ footer {
     padding: 3rem 2rem;
     position: relative;
 }
-
 
 footer .logo {
     font-family: 'Shrikhand', cursive;
@@ -291,6 +328,11 @@ footer .logo:hover,
 }
 
 /* Responsive Styles ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 768px) {
     .footer-column {
         width: 100%;

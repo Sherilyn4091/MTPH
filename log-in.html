@@ -21,9 +21,9 @@
     </header>
 
     <main>
-        <div class="signup_container">
-                <h1 class="sign-up_title">Welcome back!<br>Log in and start cooking.</h1>
-                <form id="signupForm">
+        <div class="login_container">
+                <h1 class="login_title"><strong>Welcome back!</strong><br>Log in and start cooking.</h1><br>
+                <form id="loginForm">
                    
                     <div class="form-group">
                         <input type="email" id="email" name="email" placeholder="Email" required>
@@ -33,16 +33,19 @@
                     </div>
                     <br>
                     <div class="form-group">
-                        <button type="submit" class="signup_button">Log in</button>
+                        <button type="submit" class="login_button">Log in</button>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="forgotten_pass">forgot your password?</button>
+                        <button type="button" id="forgotPasswordLink" class="forgotten_pass_button">forgot your password?</button>
                     </div>
 
                     <div class="sign-up">
-                        Don't have an account?<a href="sign-up.html" class="login_page">Sign up for free</a>
+                        Don't have an account?<a href="sign-up.html" class="signup_page">Sign up for free</a>
                     </div>
                     
+                    <div class="terms-notice">
+                        <small>By continuing you agree to our <span class="terms">Terms and Conditions</span> and <span class="terms">Privacy Policy</span></small>
+                    </div>                    
                 </form>
         </div>
     </main>
@@ -85,6 +88,6 @@
             </div>
          </footer>
 
-    <script src="sign-up.js"></script>
+    <script src="log-in.js"></script>
 </body>
 </html>
