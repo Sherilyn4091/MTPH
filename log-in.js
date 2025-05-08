@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             alert('Login successful! Welcome back to MustTry PH!');
+            window.location.href = 'home.html';
         });
     }
     

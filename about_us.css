@@ -261,7 +261,7 @@ main {
     position: absolute;
     right: 30rem;
     text-align: right;
-    animation: fadeInLeft 2s ease-out 0.2s;
+    animation: fadeInLeft 5s ease-out 0.2s;
     animation-fill-mode: both;
 }
 
@@ -275,7 +275,7 @@ main {
     position: absolute;
     left: 33rem;
     text-align: right;
-    animation: fadeInLeft 2s ease-out 0.2s;
+    animation: fadeInLeft 5s ease-out 0.2s;
     animation-fill-mode: both;
 }
 
@@ -291,7 +291,7 @@ main {
     left: 33rem;    
     margin-top: 6rem;
     margin-right: 300px;
-    animation: fadeInLeft 3s ease-out 0.4s;
+    animation: fadeInLeft 5s ease-out 0.4s;
     animation-fill-mode: both;
     width: 30rem;
     height: 25rem;
@@ -309,7 +309,7 @@ main {
     left: 33rem;
     margin-right: 80px;
     margin-top: 6rem;
-    animation: fadeInLeft 3s ease-out 0.4s;
+    animation: fadeInLeft 5s ease-out 0.4s;
     animation-fill-mode: both;
     width: 30rem;
     height: 30rem;
