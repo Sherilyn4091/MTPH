@@ -290,7 +290,7 @@ img {
     width: 25%;
     margin-right: 5rem;
     position: bottom;
-    transition: color 0.3s;
+    transition: color 0.4s;
     animation: fadeIn 3s ease-out 0s;
 
 }
@@ -333,23 +333,6 @@ footer .logo:hover,
     to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 768px) {
-    .footer-column {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-}
-
-@media (max-width: 576px) {
-    .signup_container {
-        width: 100%;
-    }
-
-    .form-group input {
-        padding: 10px;
-    }
-    
-    .footer_columns {
-        flex-direction: column;
-    }
-}
+@keyframes fadeOut {
+    to {opacity: 0;}
+  }
