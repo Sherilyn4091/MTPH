@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const storedName = localStorage.getItem('firstName');
+    if (storedName) {
+        const userNameElements = document.querySelectorAll('#userName');
+        userNameElements.forEach(element => {
+            element.textContent = storedName;
+        });
+    } else {
+        const userNameElements = document.querySelectorAll('#userName');
+        userNameElements.forEach(element => {
+            element.textContent = 'Guest';
+        });
+    }  
 
 //header sticky~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     const header = document.querySelector('header');
@@ -16,6 +28,64 @@ document.addEventListener('DOMContentLoaded', function() {
     
     addAnimationClasses();
     setTimeout(checkVisibility, 100);
+
+// sign-up button to user name ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    const signupLink = document.getElementById('signupLink');
+    const userMenu = document.getElementById('userMenu');
+    
+    if (signupLink && userMenu) {
+        const userName = storedName || 'Guest';
+        
+        signupLink.innerHTML = `<strong>${userName} ▼</strong>`;
+        signupLink.href = "#";
+    
+        const dropdownMenu = document.createElement('div');
+        dropdownMenu.className = 'dropdown-menu';
+        
+        const currentPage = window.location.pathname.split('/').pop();
+        
+        dropdownMenu.innerHTML = `
+            <div class="menu-item" id="viewProfileButton"><strong>View Profile</strong></div>
+            <div class="menu-item" id="logoutButton"><strong>Log-out</strong></div>
+        `;
+        
+        userMenu.appendChild(dropdownMenu);
+                
+        // dropdow on click ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        signupLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdownMenu.classList.toggle('show');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!userMenu.contains(e.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+                        
+        const viewProfileButton = document.getElementById('viewProfileButton');
+        if (viewProfileButton) {
+            viewProfileButton.addEventListener('click', function() {
+                if (currentPage !== 'profile.html') {
+                    window.location.href = 'profile.html';
+                } else {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+        }
+        
+        // Logout ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        const logoutButton = document.getElementById('logoutButton');
+        if (logoutButton) {
+            logoutButton.addEventListener('click', function() {
+                localStorage.removeItem('firstName');
+                localStorage.removeItem('lastName');
+                localStorage.removeItem('email');
+                window.location.href = 'log-in.html';
+            });
+        }
+    }
+
 });
 
 // animations~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
