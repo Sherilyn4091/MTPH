@@ -38,67 +38,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Loading screen ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    const loadingScreen = document.getElementById('loading-screen');
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+          document.getElementById('loading-screen').classList.add('fade-out');
+        }, 4000);
+      });
+      });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    const daisy = document.querySelector('.daisy');
-const bar = document.querySelector('.loading-bar');
-const loadingScreen = document.getElementById('loading-screen');
-
-let isDragging = false;
-
-daisy.addEventListener('mousedown', (e) => {
-  isDragging = true;
-});
-
-document.addEventListener('mouseup', () => {
-  if (isDragging) {
-    isDragging = false;
-
-    const daisyLeft = parseInt(getComputedStyle(daisy).left);
-    const barWidth = bar.clientWidth;
-    const maxLeft = barWidth - daisy.clientWidth;
-
-    if (daisyLeft >= maxLeft - 10) {
-      daisy.classList.add('boom');
-
-      // Fade out after boom effect
-      setTimeout(() => {
-        loadingScreen.classList.add('fade-out');
-      }, 1000);
-    } else {
-      // Snap back if not at end
-      daisy.style.left = '0px';
-    }
-  }
-});
-
-document.addEventListener('mousemove', (e) => {
-  if (!isDragging) return;
-
-  const barRect = bar.getBoundingClientRect();
-  let newLeft = e.clientX - barRect.left - daisy.offsetWidth / 2;
-
-  const maxLeft = bar.clientWidth - daisy.clientWidth;
-
-  if (newLeft < 0) newLeft = 0;
-  if (newLeft > maxLeft) newLeft = maxLeft;
-
-  daisy.style.left = newLeft + 'px';
-});
-
-
-    
-
-});
