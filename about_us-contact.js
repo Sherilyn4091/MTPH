@@ -78,9 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const logoutButton = document.getElementById('logoutButton');
         if (logoutButton) {
             logoutButton.addEventListener('click', function() {
-                localStorage.removeItem('firstName');
-                localStorage.removeItem('lastName');
-                localStorage.removeItem('email');
+                // localStorage.removeItem('firstName');
+                // localStorage.removeItem('lastName');
+                // localStorage.removeItem('email');
                 window.location.href = 'log-in.html';
             });
         }
