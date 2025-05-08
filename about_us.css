@@ -1,9 +1,6 @@
 /* ABOUT US & CONTACT */
 
-/* 
-ABOUT US PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
-
+/* ABOUT US PAGE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 *, ::before, ::after {
     box-sizing: border-box;
     margin: 0;
@@ -37,6 +34,7 @@ video {
     z-index: 1000;
 }
 
+/* STICKY~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 header {
     background-color: rgba(245, 245, 239, 0.95); 
     padding: 10px 0;
@@ -104,7 +102,39 @@ header .logo:hover {
     width: 100%;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* DROPDOWN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgba(245, 245, 239, 0.95);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1001;
+    margin-top: 5px;
+    right: 0;
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu .menu-item {
+    padding: 5px;
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.dropdown-menu .menu-item:hover {
+    background-color: #f0ebe0;
+    color: #dab347;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MAIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 main {
     background-color: #5d5340;
     color: white;
@@ -129,7 +159,7 @@ main {
     font-weight: 600;
     position: relative;
     text-align: center;
-    animation: fadeInDown 1s ease-out;
+    animation: fadeInDown 3s ease-out;
 }
 
 .subheading {
@@ -140,7 +170,7 @@ main {
     font-weight: 500;
     position: relative;
     text-align: center;
-    animation: fadeInUp 1s ease-out 0.3s;
+    animation: fadeInUp 3s ease-out 0.3s;
     animation-fill-mode: both;
 }
 
@@ -158,7 +188,7 @@ main {
     line-height: 2rem;
     position: relative;
     font-size: 1.2rem;
-    animation: fadeIn 1.5s ease-out;
+    animation: fadeIn 3s ease-out;
 }
 
 .about_us_description p {
@@ -168,7 +198,7 @@ main {
     color: #333;
     max-width: 80%;
     margin: 0 auto;
-    animation: fadeIn 2s ease-out;
+    animation: fadeIn 3s ease-out;
 }
 
 .team {
@@ -185,7 +215,7 @@ main {
     letter-spacing: 5px;
     font-weight: 500;
     text-align: center;
-    animation: fadeInDown 2s ease-out;
+    animation: fadeInDown 3s ease-out;
 }
 
 .team_info {
@@ -206,7 +236,7 @@ main {
     position: absolute;
     right: 30rem;
     text-align: right;
-    animation: fadeInLeft 1s ease-out;
+    animation: fadeInLeft 2s ease-out;
 }
 
 .jannalyn_name {
@@ -218,7 +248,7 @@ main {
     position: absolute;
     left: 33rem;
     text-align: right;
-    animation: fadeInLeft 1s ease-out;
+    animation: fadeInLeft 2s ease-out;
 }
 
 .sherilyn_title {
@@ -231,7 +261,7 @@ main {
     position: absolute;
     right: 30rem;
     text-align: right;
-    animation: fadeInLeft 1s ease-out 0.2s;
+    animation: fadeInLeft 2s ease-out 0.2s;
     animation-fill-mode: both;
 }
 
@@ -245,7 +275,7 @@ main {
     position: absolute;
     left: 33rem;
     text-align: right;
-    animation: fadeInLeft 1s ease-out 0.2s;
+    animation: fadeInLeft 2s ease-out 0.2s;
     animation-fill-mode: both;
 }
 
@@ -261,7 +291,7 @@ main {
     left: 33rem;    
     margin-top: 6rem;
     margin-right: 300px;
-    animation: fadeInLeft 1s ease-out 0.4s;
+    animation: fadeInLeft 3s ease-out 0.4s;
     animation-fill-mode: both;
     width: 30rem;
     height: 25rem;
@@ -279,7 +309,7 @@ main {
     left: 33rem;
     margin-right: 80px;
     margin-top: 6rem;
-    animation: fadeInLeft 1s ease-out 0.4s;
+    animation: fadeInLeft 3s ease-out 0.4s;
     animation-fill-mode: both;
     width: 30rem;
     height: 30rem;
@@ -297,7 +327,7 @@ main {
     right: 8rem;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: transform 0.3s ease;
-    animation: fadeInRight 1s ease-out 0.6s;
+    animation: fadeInRight 2s ease-out 0.6s;
     animation-fill-mode: both;
 }
 
@@ -312,7 +342,7 @@ main {
     right: 40rem;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: transform 0.3s ease;
-    animation: fadeInRight 1s ease-out 0.6s;
+    animation: fadeInRight 2s ease-out 0.6s;
     animation-fill-mode: both;
 }
 
