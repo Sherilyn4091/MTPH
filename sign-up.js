@@ -58,19 +58,20 @@ document.addEventListener('DOMContentLoaded', function() {
         return emailRegex.test(email);
     }
 
+    //  UPDATE USER~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     function updateUserMenu(firstName) {
         const userMenu = document.getElementById('userMenu');
         userMenu.innerHTML = `
             <span class="user-name">${firstName}</span>
             <div class="dropdown">
-                <a href="#">View Profile</a>
-                <a href="#" id="logoutBtn">Log Out</a>
+                <a href="profile.html">View Profile</a>
+                <a href="log-in.html" id="logoutBtn">Log Out</a>
             </div>
         `;
     
         document.getElementById('logoutBtn').addEventListener('click', () => {
             localStorage.removeItem('firstName');
-            // location.reload(); // Refresh page to reset to Sign-up
+            location.reload();
         });
     }
     
