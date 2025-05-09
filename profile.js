@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Favorite toggle ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     const favoriteToggles = document.querySelectorAll('.favorite-toggle');
+    const favoritesGrid = document.getElementById('favorites-grid');
+
     favoriteToggles.forEach(toggle => {
         toggle.addEventListener('click', function (e) {
             const recipeCard = this.closest('.recipe-card');
@@ -44,6 +46,13 @@ document.addEventListener('DOMContentLoaded', function () {
             
             setTimeout(() => {
                 recipeCard.remove();
+
+                if (favoritesGrid && favoritesGrid.children.length === 0) {
+                    const emptyMessage = document.createElement('div');
+                    emptyMessage.className = 'empty-favorites-message';
+                    emptyMessage.innerHTML = 'You haven\'t added any favorites yet.<br>Explore our recipes and click the star to add them here!';
+                    favoritesGrid.appendChild(emptyMessage);
+                }
             }, 300);
             
             e.stopPropagation();
