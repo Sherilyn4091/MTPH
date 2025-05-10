@@ -1,6 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maruya Recipe</title>
+  <link rel="stylesheet" href="recipe01.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">MUST<br>TRY PH</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="back-button">⬅️</div>
+
+  <main class="recipe-container">
+    <div class="header">
+      <h2>01</h2>
+      <div class="title-block">
+        <h1>Maruya (Banana Fritters)<br><span>Recipe</span></h1>
+      </div>
+      <img src="MARUYA.jpg" alt="Maruya" class="recipe-img" />
+    </div>
+
+    <div class="timing">
+      <div><strong>Prep Time</strong><br><span id="prep-time">10 minutes</span></div>
+      <div><strong>Cook Time</strong><br><span id="cook-time">10 minutes</span></div>
+      <div><strong>Total Time</strong><br><span id="total-time">20 minutes</span></div>
+    </div>
+
+    <div class="info">
+      <div><strong>Cuisine</strong><br>Filipino</div>
+      <div>
+        <strong>Servings: <span id="serving-value">6</span></strong>
+        <input type="range" id="serving-slider" min="1" max="20" value="6"/>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button id="made">I made it</button>
+      <button id="add">add to favorites</button>
+      <button id="remove">remove from favorites</button>
+    </div>
+
+    <section class="ingredients">
+      <h3>INGREDIENTS</h3>
+      <ul>
+        <li><span data-base="1">1</span> cup flour</li>
+        <li><span data-base="0.5">0.5</span> cup sugar</li>
+        <li><span data-base="1">1</span> tsp baking powder</li>
+        <li><span data-base="0.25">0.25</span> tsp salt</li>
+        <li><span data-base="1">1</span> egg</li>
+        <li><span data-base="1">1</span> cup milk</li>
+        <li><span data-base="2">2</span> tsp melted butter</li>
+        <li><span data-base="1">1</span> cup oil</li>
+        <li><span data-base="6">6</span> bananas (saba), sliced</li>
+        <li>Sugar for sprinkling</li>
+      </ul>
+    </section>
+
+    <section class="instructions">
+      <h3>INSTRUCTIONS</h3>
+      <ol id="instruction-list">
+        <li class="step" data-time="2">
+          <span class="step-number">1</span> Mix &nbsp;<span data-base="1">1</span> &nbsp;cup flour, <span data-base="0.5">0.5</span>&nbsp; cup sugar, &nbsp;<span data-base="1">1</span> &nbsp;tsp baking powder, and <span data-base="0.25">0.25</span> tsp salt in a bowl.
+        </li>
+
+        <li class="step" data-time="3">
+          <span class="step-number">2</span> Beat <span data-base="1">1</span> egg with <span data-base="1">1</span> cup milk and <span data-base="2">2</span> tsp melted butter. Add to dry mixture.
+        </li>
+
+        <li class="step" data-time="5">
+          <span class="step-number">3</span> Fold in <span data-base="6">6</span> sliced bananas (saba).
+        </li>
+        <!-- Step 4 Alternative with Cute Timer -->
+  <li class="step" data-step="4-alt">  
+    <div class="cute-timer">
+      <div class="emoji-clock" id="emoji-clock">
+        ⏰
+        <div class="face">
+          <div class="eye left-eye"></div>
+          <div class="eye right-eye"></div>
+          <div class="mouth"></div>
+        </div>
+      </div>
+      <div class="time-display" id="clock-display">00:10</div>
+      <div class="controls">
+        <button id="start-timer">Start</button>
+        <button id="pause-timer">Pause</button>
+        <button id="reset-timer">Reset</button>
+      </div>
+    </div>
+  </li>
+
+  
+        <li class="step" data-time="7">
+          <span class="step-number">5</span> Drain and sprinkle sugar. Enjoy!
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <script src="recipe01.js"></script>
+=======
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Maruya (Banana Fritters) Recipe</title>
@@ -262,5 +369,6 @@
       }
     }
   </script>
-</body>
+
+  </body>
 </html>
