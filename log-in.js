@@ -1,6 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     const header = document.getElementById('header');
     
+    // LOADING SCREEN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        setTimeout(() => {
+            loadingScreen.classList.add('fade-out');
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 1000); 
+        }, 4000);
+    }
+
     // Sticky~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
@@ -30,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             alert('Login successful! Welcome back to MustTry PH!');
+            window.location.href = 'home.html';
         });
     }
     
