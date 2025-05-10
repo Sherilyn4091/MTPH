@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Banana Recipes</title>
+  <link rel="stylesheet" href="recipe.css" />
+</head>
+<body>
+  <div class="banner">
+    Check out some of our favorite ripe banana recipes
+  </div>
+
+  <!-------------------------------------- Recipe cards ---------------------------------------------------------->
+  <div class="grid-container">
+    <a href="recipe01.html" class="recipe-card" style="background-image: url('MARUYA.jpg');" data-price="120">
+      <div class="star" data-recipe="recipe01">★</div>
+      <div class="circle">01</div>
+      <div class="title">Maruya (banana fritters) recipe</div>
+    </a>
+    <a href="recipe02.html" class="recipe-card" style="background-image: url('CHEESY TURON.jpg');" data-price="200">
+      <div class="star" data-recipe="recipe02">★</div>
+      <div class="circle">02</div>
+      <div class="title">Banana Cheese Turon Recipe</div>
+    </a>
+    <a href="recipe03.html" class="recipe-card" style="background-image: url('Crispy Bananas Foster Spring Rolls Recipe.jpg');" data-price="220">
+      <div class="star" data-recipe="recipe03">★</div>
+      <div class="circle">03</div>
+      <div class="title">Banana Pancakes</div>
+    </a>
+    <a href="recipe04.html" class="recipe-card" style="background-image: url('Ginataang Bilo-Bilo Recipe.jpg');" data-price="250">
+      <div class="star" data-recipe="recipe04">★</div>
+      <div class="circle">04</div>
+      <div class="title">Banana Muffins</div>
+    </a>
+    <a href="recipe05.html" class="recipe-card" style="background-image: url('Ginataang Saging at Sago.jpg');" data-price="300">
+      <div class="star" data-recipe="recipe05">★</div>
+      <div class="circle">05</div>
+      <div class="title">Banana Cake</div>
+    </a>
+    <a href="recipe06.html" class="recipe-card" style="background-image: url('Saba Langka Empanada Recipe.jpg');" data-price="400">
+      <div class="star" data-recipe="recipe06">★</div>
+      <div class="circle">06</div>
+      <div class="title">Banana Cue</div>
+    </a>
+    <a href="recipe07.html" class="recipe-card" style="background-image: url('UBE BANANA TURON.jpg');" data-price="500">
+      <div class="star" data-recipe="recipe07">★</div>
+      <div class="circle">07</div>
+      <div class="title">Banana Ice Cream</div>
+    </a>
+    <a href="recipe08.html" class="recipe-card" style="background-image: url('Ube-Banana Fried Burrito Recipe.jpg');" data-price="500">
+      <div class="star" data-recipe="recipe08">★</div>
+      <div class="circle">08</div>
+      <div class="title">Banana Smoothie</div>
+    </a>
+  </div> <!-- End of .grid-container -->
+
+  <!-------------------------------------- Budget section at the bottom ------------------------------------------>
+  <div class="budget-section" style="text-align: center; padding: 20px; background-color: #fff7ec; border-top: 1px solid #d2b48c;">
+    <h2 style="margin: 0; font-family: 'Agrandir', sans-serif;">Musttry PH <span style="color: #a87420;">|</span> Cooking is your go-to source for budget-friendly food.</h2>
+    <p style="margin-top: 10px; font-size: 16px;">How much is your budget?</p>
+
+    <div style="margin: 20px auto; max-width: 400px;">
+      <input type="range" min="50" max="500" value="150" step="10" id="budgetSlider" style="width: 100%; border-radius: 30px;">
+      <div style="margin-top: 10px; font-weight: bold;">
+        Budget: ₱<span id="budgetAmount">150</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="recipe.js"></script>
+</body>
+</html>
