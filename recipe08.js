@@ -1,10 +1,50 @@
-// document.addEventListener('DOMContentLoaded', function() {
-//     const header = document.getElementById('header');
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.getElementById('header');
+
+    const storedName = localStorage.getItem('firstName');
+    if (storedName) {
+        updateUserMenu(storedName);
+    }
+
+    updateRecipe(baseServings);
+    setupTimers();
+
+    // STAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    document.querySelectorAll('.star').forEach(star => {
+        star.addEventListener('click', function() {
+            alert('Added to favorites!');
+        });
+    });
+
+    // Slider ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    if (slider) {
+        slider.addEventListener('input', () => {
+            updateRecipe(parseInt(slider.value));
+            setupTimers(); 
+        });
+    }
+
+    //  UPDATE USER~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    function updateUserMenu(firstName) {
+        const userMenu = document.getElementById('userMenu');
+        userMenu.innerHTML = `
+            <span class="user-name">${firstName}</span>
+            <div class="dropdown">
+                <a href="profile.html">View Profile</a>
+                <a href="log-in.html" id="logoutBtn">Log Out</a>
+            </div>
+        `;
+    
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            location.reload();
+        });
+    }
+});
 
 // Sticky ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 window.addEventListener('scroll', function() {
-if (window.scrollY > 50) {
-    header.classList.add('sticky');
+    if (window.scrollY > 50) {
+        header.classList.add('sticky');
     } else {
         header.classList.remove('sticky');
     }
@@ -31,18 +71,6 @@ const slider = document.getElementById('servingsSlider');
 const ingredientsList = document.getElementById('ingredientsList');
 const starIcon = document.getElementById('star');
 
-document.addEventListener('DOMContentLoaded', function() {
-  updateRecipe(baseServings);
-  setupTimers();
-
-  // STAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  document.querySelectorAll('.star').forEach(star => {
-    star.addEventListener('click', function() {
-      alert('Added to favorites!');
-    });
-  });
-});
-
 // RECIPE UPDATEZ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function updateRecipe(servings) {
     servingsDisplay.textContent = servings;
@@ -65,13 +93,6 @@ function updateRecipe(servings) {
       }
       ingredientsList.appendChild(li);
     });
-  }
-
-if (slider) {
-  slider.addEventListener('input', () => {
-    updateRecipe(parseInt(slider.value));
-    setupTimers(); 
-  });
 }
 
 // TIMER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~X
@@ -82,10 +103,8 @@ function setupTimers() {
       const display = container.querySelector('.time');
       const stepText = container.closest('li').textContent.trim();
       
-      // Default to baseCook value (30 seconds)
       let countdownSeconds = Math.round(baseCook * 60);
       
-      // Check if step text specifies time
       if (stepText.includes('minutes')) {
         const minutesMatch = stepText.match(/(\d+)\s*minutes/);
         if (minutesMatch) {
@@ -104,10 +123,11 @@ function setupTimers() {
       const secs = String(countdownSeconds % 60).padStart(2, '0');
       display.textContent = `${mins}:${secs}`;
     });
-  }
+}
 
 let intervals = [];
 
+// START ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function startTimer(button) {
   const container = button.parentElement;
   const display = container.querySelector(".time");
@@ -194,6 +214,4 @@ function resetTimer(button) {
         display.textContent = "00:00";
       }
     }
-  }
-
-// });
+}
