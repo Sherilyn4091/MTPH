@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MTPH | Peanut Butter Banana Smoothie</title>
+    <link rel="stylesheet" href="recipe08.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Shrikhand&display=swap">
+</head>
+
+<body>
+
+    <header id="header">
+        <div id="logo" class="logo">Must<br>Try&nbsp;PH</div>      
+
+        <nav class="pages">
+            <a href="home.html"><strong>Home</strong></a>
+            <a href="about_us.html"><strong>About</strong></a>
+            <a href="about_us.html#contact_page"><strong>Contact</strong></a>
+
+            <div class="user_menu" id="userMenu">
+                <a href="sign-up.html" id="signupLink"><strong>Sign-up</strong></a>
+            </div>
+            
+        </nav>
+    </header>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MAIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <main>
+        <section class="buttons"> 
+            <a class="back" href="recipe.html"><strong>←</strong> Back to Recipes</a>
+            <img src="star.jpg" alt="Add to favorites" class="star" id="star" > 
+        </section>
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~RECIPE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <section class="container">
+            <div class="header">
+                <h1>08<br>Peanut Butter Banana Smoothie</h1>
+                <img class="recipe-image" src="recipe08.jpg" alt="Peanut Butter Banana Smoothie" data-tooltip="Add to favorites">
+            </div>
+            <hr>
+            <div class="info-grid">
+                <div>
+                    <div class="label">Prep Time</div>
+                    <div id="prepTime">5 minutes</div>
+                </div>
+                <div>
+                    <div class="label">Cook Time</div>
+                    <div id="cookTime">0 minutes</div>
+                </div>
+                <div>
+                    <div class="label">Total Time</div>
+                    <div id="totalTime">5 minutes</div>
+                </div>
+            </div>
+            <hr>
+            <div class="info-grid">            
+                <div>
+                    <div class="label">Course</div>
+                    <div>Snacks/Merienda</div>
+                </div>
+                <div>
+                    <div class="label">Cuisine</div>
+                    <div>Filipino</div>
+                </div>
+                <div class="servings-container">
+                    <div class="label">Servings</div>
+                    <div id="servings">4</div>
+                    <input type="range" min="1" max="10" value="4" class="slider" id="servingsSlider">
+                </div>
+            </div>
+
+            <section class="ingredients">
+                <h2>Ingredients</h2>
+                <ul id="ingredientsList">
+                </ul>
+            </section>
+            
+            <section class="steps">
+                <h2>Instructions</h2>
+                <ol>
+                    <li>
+                        Gather all ingredients.
+                    </li>
+                    <li>
+                        Place bananas, milk, peanut butter, honey, and ice cubes in a blender.
+                    </li>
+                    <li>
+                        Blend until smooth, about 30 seconds. <br>
+                        <div class="timer">
+                            <button onclick="startTimer(this)">Start</button>
+                            <button onclick="pauseTimer(this)">Pause</button>
+                            <button onclick="resetTimer(this)">Reset</button>
+                            <span class="time">00:30</span>
+                        </div>
+                    </li>
+                    <li>
+                        Pour into glasses and enjoy!
+                    </li>
+                </ol>
+            </section>
+        </section>
+    </main>
+
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <footer>
+            <div class="footer_columns">
+
+                <div class="footer-column">
+                    <div class="logo">Must<br>Try &nbsp;PH</div>     
+                    <p>Follow us </p>
+
+                    <div class="social_media">
+                        <img src="facebook.jpg" alt="facebook" width="20" height="30">
+                        <img src="instagram.jpg" alt="instagram" width="30" height="30">
+                        <img src="pinterest.jpg" alt="pinterest" width="30" height="30">
+                        <img src="tiktok.jpg" alt="tiktok" width="25" height="30">
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="about_us.html#contact_page">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <ul>
+                        <li><p>Privacy Policy</p></li>
+                        <li><p>Terms & Conditions</p></li>
+                        <li><p>Disclaimer</p></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 MustTryPH. All rights reserved.</p>
+            </div>
+         </footer>
+
+    <script src="recipe08.js"></script>
+</body>
+</html>

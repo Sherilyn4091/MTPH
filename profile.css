@@ -83,30 +83,91 @@ header .logo:hover {
     width: 100%;
 }
 
-/* Main Content~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.container_external_background {
-    background: url(leaf.jpg);
-    padding: 2rem;
-    min-height: 100vh;
+/* DROPDOWN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgba(245, 245, 239, 0.95);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1001;
+    margin-top: 5px;
+    right: 0;
+    min-width: 150px;
+    transition: all 0.3s ease;
 }
 
-.profile_container {
-    max-width: 80%;
-    min-height: 50rem;
-    margin: 0 auto;
-    padding: 4rem;
-    background-color: #5b4c47;
-    border-radius: 2rem;
-    box-shadow: 0 4px 8px rgba(32, 32, 32, 0.50);
-    color: #fff;
+.dropdown-menu .menu-item {
+    padding: 5px;
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.dropdown-menu .menu-item:hover {
+    background-color: #f0ebe0;
+    color: #dab347;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+/* LOADING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5d5340;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loading-bar {
+    width: 300px;
+    height: 35px;
+    background-color: #3f3a2f;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .banana {
+    width: 50px;
+    height: 60px;
+    background: url('banana.png') center/contain;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    cursor: grab;
+    animation: moveBanana 4s ease forwards;
+
+    transition: filter 0.3s ease;
+  }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~ MAIN CONTENT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.container_external_background {
+    background: url(leaf.jpg);
+    min-height: 100vh;
+    background-position: center;
+    position: relative;
+    z-index: 1;
 }
 
 .profile-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
-    text-align: center;
+    margin-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    max-width: 100%;
+    z-index: 20;
 }
 
 .profile-avatar {
@@ -114,7 +175,8 @@ header .logo:hover {
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
-    background: linear-gradient(to bottom, #a7d9f6, #ffffff, #89c672);
+    background: white;
+    margin-top: 15x;
     margin-bottom: 15px;
 }
 
@@ -131,18 +193,31 @@ header .logo:hover {
     color: #ffffff;
 }
 
+.profile_container {
+    max-width: 80%;
+    min-height: 50rem;
+    margin: 0 auto;
+    padding: 4rem;
+    background-color: #5b4c47;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px rgba(32, 32, 32, 0.50);
+    color: #fff;
+}
+
 .favorite_title {
     display: flex;
     align-items: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-family: 'cursive';
+    font-size: 25px;
+    font-style: italic;
+    text-shadow: 0 0 0.5px #ffd931;
+    margin-bottom: 30px;
     color: #ffffff;
 }
 
 .star-icon {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
 }
 
@@ -155,19 +230,23 @@ header .logo:hover {
 .recipe-card {
     position: relative;
     background-color: #ffffff;
+    font-size: 14px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    width: 95%;
+    height: 98%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.recipe-card:hover {
+.favorites-grid .recipe-card:hover, 
+.favorite_title .star-icon:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.recipe-card.removing {
+.recipe-card.undo_favorite {
     transform: scale(0.8);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -211,20 +290,16 @@ header .logo:hover {
 
 .recipe-info h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    font-size: 15px;
     margin: 0 0 5px 0;
 }
 
 .recipe-info p {
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 10px;
     color: #666;
     margin: 0;
 }
-
-
-
-
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Footer~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 footer {
@@ -264,9 +339,8 @@ img {
     width: 25%;
     margin-right: 5rem;
     position: bottom;
-    transition: color 0.3s;
+    transition: color 0.4s;
     animation: fadeIn 3s ease-out 0s;
-
 }
 
 .footer-column ul li, 
@@ -274,6 +348,8 @@ img {
     margin-bottom: 10px;
     margin-top: 1rem;
     color: #733d23;    
+    list-style: none;
+    text-decoration: none;
 }
 
 footer .logo:hover, 
@@ -307,76 +383,26 @@ footer .logo:hover,
     to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 768px) {
-    .footer-column {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-}    
-    .footer_columns {
-        flex-direction: column;
-    }
+  @keyframes fadeOut {
+    to {opacity: 0;}
+  }
 
-    /* LOADING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-#loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #5d5340;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.5s;
+  @keyframes moveBanana {
+    0% {
+      left: 0;
+      filter: none;
+    }
+    90% {
+      left: 260px;
+      filter: none;
+    }
+    100% {
+      left: 260px;
+      filter: drop-shadow(10px 10px 60px #ffd818);
+    }
   }
-  
-  .loading-bar {
-    width: 300px;
-    height: 50px;
-    background-color: #3f3a2f;
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .daisy {
-    width: 40px;
-    height: 40px;
-    background: url('daisy.png') no-repeat center/contain;
-    position: absolute;
-    top: -10px;
-    left: 0;
-    cursor: grab;
-    transition: filter 0.3s ease;
-  }
-  
-  
-  
+
   #loading-screen.fade-out {
     animation: fadeOut 1s ease forwards;
   }
-
-  #loading-screen.boom {
-    background-color: #d3c163;
-    transition: background-color 0.5s;
-  }
   
-  @keyframes fadeOut {
-    to {
-      opacity: 0;
-    }
-  }
-
-  @keyframes boom {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
