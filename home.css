@@ -1,173 +1,303 @@
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: url('DESSERT.jpg') no-repeat center center;
-    background-size: cover;
-    background-attachment: scroll;
-    color: #391b1b;
-    overflow-x: hidden;
-    position: relative;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-.bold-text {
-    font-weight: bold;
+/* Part 1 */
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #c8a88f;
+  background-color: #000;
 }
 
-.container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color : rgba(255, 255, 255, 0.5); 
-    z-index: -1;
+/* header */
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', serif;
+  scroll-behavior: smooth;
 }
+
 header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    position: absolute;
-    top: 0;
-    z-index: 10;
-    background: linear-gradient(to right, rgba(87, 52, 29, 0.449), rgba(123, 76, 43, 0.373)); 
-    backdrop-filter: blur(6px);
-    height: 80px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-nav {
-    margin-right: 30px; 
+  background-color: rgba(245, 245, 239, 0.95); 
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 1000;
 }
 
-.logo p {
-    font-family: 'Shrikhand', cursive;
-    font-size: 36px;
-    margin: 0;
-    color: white;
-    text-align: center;
-    line-height: 1.2;
+header.sticky {
+  padding: 5px;
+  background-color: rgba(175, 175, 144, 0.95); 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-nav ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+header .logo {
+  font-family: 'Shrikhand', cursive;
+  font-size: 1.3rem;
+  color: #414b3b;
+  animation: fadeInLeft 1s ease-out;
+  margin-left: 2rem;
 }
 
-nav a {
-    font-family: 'Agrandir', sans-serif;
-    text-decoration: none;
-    color: #2b1414;
-    font-size: 20px;
+header .logo:hover {
+  color: #dab347;
+  cursor: pointer;
 }
 
-nav a:hover {
-    color: #f5e3d3;
+.pages {
+  display: flex;
+  gap: 1rem;
+  animation: fadeInRight 1s ease-out;
 }
 
-.main-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
-    padding: 10%;
-    margin-top: 80px;
+.pages a {
+  text-decoration: none;
+  color: #414b3b;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  margin-right: 2rem;
 }
 
-.text-left {
-    text-align: left;
-    max-width: 50%;
+.pages a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #414b3b;
+  transition: width 0.3s ease;
 }
 
-.cooking {
-    font-family: 'Garet Book', serif;
-    font-size: 50px;
-    margin-bottom: 10px;
+/* PART 1: Intro Section */
+
+/* Intro Section */
+.intro-section {
+  background-image: url('DESSERT.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+  padding-right: 16px; /* Added right padding to allow flush placement */
+  position: static;
 }
 
-.title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 88px;
-    line-height: 1.1;
-    margin: 0;
+/* Intro Content */
+.intro-content {
+  max-width: 800px;
+  position: unset;
+  margin-top: 0/* Move entire block down so Cooking is 1 inch from the top */
 }
 
-.description {
-    font-family: 'Codec Pro', monospace;
-    font-size: 24px;
-    margin-top: 20px;
-    max-width: 90%;
+
+/* Text Styling */
+
+/* Cooking text */
+.cooking-text {
+  font-family: 'Garet Book', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: #eddccd;
+  margin-bottom: 10px;
+  margin-top: -00px; 
 }
 
-.bold-text {
-    font-weight: bold;
+/* Title: "The Best Banana Recipes in One Place" */
+.main-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem;
+  font-weight: bold;
+  color: #ffffff; /* White or any color you prefer */
+  line-height: 1;
+  margin-bottom: 10px;
 }
 
-.explore-recipes-container {
-    position: absolute;
-    bottom: 20px;  
-    right: 20px; 
+/* Description paragraph */
+.intro-description {
+  font-family: 'Codec Pro', sans-serif;
+  font-size: 30px;
+  line-height: 1.6;
+  flex: 1;
+  color: #c8a88f;
+  max-width: 600px;
+  margin-bottom: 10px;
 }
 
+.description-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  max-width: 800px;
+}
+
+/* EXPLORE RECIPES BUTTON */
 .explore-recipes {
-    display: inline-block;
-    font-family: 'Codec Pro', monospace;
-    font-size: 20px;
-    letter-spacing: 1px;
-    padding: 12px 40px;
-    background-color: #7b4d2b;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+  position: absolute;
+  right: 50px;
+  bottom: 100px; /* just below the paragraph */
+  background-color: #745e4d;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 20px 50px;
+  font-size: 30px; 
+  border-radius: 0px;
+  transition: background-color 0.3s;
+  white-space: nowrap;
 }
 
 .explore-recipes:hover {
-    background-color: #5a3a24;
-    transform: translateY(-5px) scale(1.05);
+  background-color: #facc15;
 }
 
-.explore-recipes.clicked {
-    transform: scale(0.98);
-    transition: transform 0.1s ease;
-}
-
+/* MOBILE FIX */
 @media (max-width: 768px) {
-    .main-content {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
+  .description-row {
+    flex-direction: column;
+  }
 
-    .text-left {
-        max-width: 100%;
-        text-align: center;
-    }
+  .explore-recipes {
+    position: static;
+    align-self: flex-start;
+    margin-top: 16px;
+  }
+}
 
-    .title {
-        font-size: 50px;
-    }
 
-    .description {
-        font-size: 18px;
-    }
+/* Part 2 */
+.scrolling-section {
+  display: flex;
+  height: 100vh;
+  background: #6b4f3b;
+  position: relative;
+  overflow: hidden;
+  padding: 40px;
+  box-sizing: border-box;
+  gap: 40px;
+}
 
-    .explore-recipes {
-        margin-top: 20px;
-        font-size: 18px;
-    }
+.scroll-column {
+  width: 25%;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Animation for seamless loop */
+.scroll-up {
+  animation: scrollUp 20s linear infinite;
+}
+
+.scroll-down {
+  animation: scrollDown 20s linear infinite;
+}
+
+.scroll-inner img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* Keyframes to scroll up and down infinitely */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.center-text-box {
+  flex: 1;
+  padding: 3rem;
+  background: #d3c163;
+  border-radius: 30px;
+  color: #3d2f1d;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-height: 90%;
+  overflow-y: auto;
+}
+
+
+/* Part 3 */
+.recipe-section {
+  padding: 4rem 2rem;
+  background-color: #f8f4eb;
+  text-align: center;
+}
+
+.recipe-section h2 {
+  margin-bottom: 2rem;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.recipe-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  color: #5a3e28;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .scrolling-section {
+    flex-direction: column;
+    height: auto;
+  }
+  .scroll-column, .center-text-box {
+    width: 100%;
+  }
+  .scroll-inner {
+    animation-duration: 15s;
+  }
 }

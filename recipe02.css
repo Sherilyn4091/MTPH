@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: #fdf4e3;
+    color: #333;
+    padding: 20px;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #d3c163;
+    padding: 10px 20px;
+    border-radius: 12px;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-family: 'Shrikhand', cursive;
+    line-height: 1;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-family: 'Agrandir', sans-serif;
+  }
+  
+  .back-button {
+    font-size: 30px;
+    cursor: pointer;
+    margin: 20px 0;
+  }
+  
+  .recipe-container {
+    background: #fff9e5;
+    padding: 25px;
+    border-radius: 18px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .title-block h1 {
+    font-size: 24px;
+  }
+  
+  .recipe-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  .timing,
+  .info {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    text-align: center;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    padding: 10px 0;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #f5d76e;
+    font-weight: bold;
+  }
+  
+  .ingredients, .instructions {
+    margin-top: 25px;
+  }
+  
+  .ingredients h3, .instructions h3 {
+    border-bottom: 2px solid #333;
+    margin-bottom: 10px;
+  }
+  
+  ul li, ol li {
+    margin: 8px 0;
+    line-height: 1.6;
+  }
+  
+  /* Existing styles */
+
+.step-number {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #d3c163;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .step.completed .step-number {
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  .step.completed {
+    text-decoration: line-through;
+    color: #999;
+  }
+  
+  .step {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+
+
+
+  
+
+
+  
+
+
+
+  .cute-timer {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .emoji-clock {
+    position: relative;
+    font-size: 60px;
+    display: inline-block;
+    margin: 10px auto;
+    animation: bounce 2s infinite ease-in-out;
+  }
+  
+  .face {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+  }
+  
+  .eye {
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    animation: blink 3s infinite;
+  }
+  
+  .left-eye {
+    left: 15px;
+    top: 15px;
+  }
+  
+  .right-eye {
+    right: 15px;
+    top: 15px;
+  }
+  
+  .mouth {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    border: 2px solid black;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: smile 2s infinite;
+  }
+  
+  .time-display {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .controls button {
+    margin: 5px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ffc107;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .controls button:hover {
+    background-color: #f0b400;
+  }
+  
+  @keyframes blink {
+    0%, 90%, 100% {
+      height: 8px;
+    }
+    95% {
+      height: 1px;
+    }
+  }
+  
+  @keyframes smile {
+    0%, 100% {
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      transform: translateX(-50%) scale(1.2);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+  
