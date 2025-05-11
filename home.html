@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Best Banana Recipes</title>
-    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Agrandir&family=Cormorant+Garamond&family=Garet+Book&family=Codec+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Shrikhand&display=swap">
+
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <p>Must<br>Try PH</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="about_us.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="sign-up.html">Sign Up</a></li>
-                </ul>
-            </nav>      
-        </header>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ HEADER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <header id="header">
+      <div id="logo" class="logo">Must<br>Try&nbsp;PH</div>      
+
+      <nav class="pages">
+          <a href="home.html"><strong>Home</strong></a>
+          <a href="about_us.html"><strong>About</strong></a>
+          <a href="about_us.html#contact_page"><strong>Contact</strong></a>
+
+          <div class="userMenu" id="userMenu">
+              <a href="sign-up.html" id="signupLink"><strong>Sign-up</strong></a>
+          </div>
+      </nav>
+  </header>
+      
         <section class="main-content">
             <div class="text-left">
                 <p class="cooking">Cooking</p>
@@ -171,18 +174,47 @@
   </div>
 </div>
 
-<!-- Budget Script -->
-<script>
-  const slider = document.getElementById("budgetSlider");
-  const amount = document.getElementById("budgetAmount");
-  const cards = document.querySelectorAll(".recipe-card");
 
-  slider.addEventListener("input", () => {
-    const value = parseInt(slider.value);
-    amount.textContent = value;
-    cards.forEach(card => {
-      const price = parseInt(card.getAttribute("data-price"));
-      card.style.display = price <= value ? "flex" : "none";
-    });
-  });
-</script>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <footer>
+      <div class="footer_columns">
+
+          <div class="footer-column">
+              <div class="logo">Must<br>Try &nbsp;PH</div>     
+              <p>Follow us </p>
+
+              <div class="social_media">
+                  <img src="facebook.jpg" alt="facebook" width="20" height="30">
+                  <img src="instagram.jpg" alt="instagram" width="30" height="30">
+                  <img src="pinterest.jpg" alt="pinterest" width="30" height="30">
+                  <img src="tiktok.jpg" alt="tiktok" width="25" height="30">
+              </div>
+          </div>
+
+          <div class="footer-column">
+              <ul>
+                  <li><a href="home.html">Home</a></li>
+                  <li><a href="about_us.html">About Us</a></li>
+                  <li><a href="about_us.html#contact_page">Contact</a></li>
+              </ul>
+          </div>
+
+          <div class="footer-column">
+              <ul>
+                  <li><p>Privacy Policy</p></li>
+                  <li><p>Terms & Conditions</p></li>
+                  <li><p>Disclaimer</p></li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="copyright">
+          <p>&copy; 2025 MustTryPH. All rights reserved.</p>
+      </div>
+   </footer>
+  
+  <script src="home.js"></script>
+</body>
+
+</body>
+</html>
