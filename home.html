@@ -1,106 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Must Try PH - Banana Recipes</title>
-  <link rel="stylesheet" href="home.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Best Banana Recipes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Agrandir&family=Cormorant+Garamond&family=Garet+Book&family=Codec+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <!-- header -->
-    <header id="header_top" class="header_top">
-        <div id="logo" class="logo">Must<br>Try&nbsp;PH</div>      
+    <div class="container">
+        <header>
+            <div class="logo">
+                <p>Must<br>Try PH</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="sign-up.html">Sign Up</a></li>
+                </ul>
+            </nav>      
+        </header>
+        <section class="main-content">
+            <div class="text-left">
+                <p class="cooking">Cooking</p>
+                <h1 class="title">
+                    <span class="bold-text">The Best</span><br>
+                    <span class="bold-text">Banana Recipes</span><br>
+                    <span class="bold-text">in One Place</span>
+                </h1>
+                <p class="description">
+                    Discover delicious and creative ways to incorporate ripe bananas into your meals with our easy-to-follow recipes.
+                </p>
+            </div>
+            <div class="explore-recipes-container">
+                <a href="recipe.html" class="explore-recipes">Explore Recipes</a>
+            </div>
+        </section>
+    </div>
+    <script src="home.js"></script>
 
-        <nav class="pages">
-            <a href="home.html"><strong>Home</strong></a>
-            <a href="about_us.html"><strong>About</strong></a>
-            <a href="about_us.html#contact_page"><strong>Contact</strong></a>
-            <a href="sign-up.html"><strong>Sign-up</strong></a>
-        </nav>
-    </header>
+  <!----------------------- second  ------------------>
 
-
- <!-- PART 1: Flash Intro -->
-<section class="intro-section">
-  <div class="intro-content">
-    <p class="cooking-text"> Cooking </p>
-  <h1 class="main-title">
-    <span>The Best</span><br>
-    <span>Banana Recipes</span><br>
-    <span>in One Place</span>
-  </h1>
-<p class="intro-description">
-  Discover delicious and creative ways to incorporate ripe bananas into your meals...
-</p>
-
-      <div class="button-container">
-        <a href="#recipes" class="explore-recipes">Explore Recipes</a>
+  <section class="scroll-section">
+    <div class="scroll-container">
+      <!-- Left vertical image loop -->
+      <div class="vertical-images left-loop">
+        <div class="image-track">
+          <img src="Ginataang Bilo-Bilo Recipe.jpg" alt="Loop Image 1" />
+          <img src="CHEESY TURON.jpg" alt="Loop Image 2" />
+          <img src="UBE BANANA TURON.jpg" alt="Loop Image 3" />
+          <img src="Crispy Bananas Foster Spring Rolls Recipe.jpg" alt="Loop Image 4" />
+          <img src="Ginataang Bilo-Bilo Recipe.jpg" alt="Loop Image 1 duplicate" />
+          <img src="CHEESY TURON.jpg" alt="Loop Image 2 duplicate" />
+          <img src="UBE BANANA TURON.jpg" alt="Loop Image 3 duplicate" />
+          <img src="Crispy Bananas Foster Spring Rolls Recipe.jpg" alt="Loop Image 4 duplicate" />
+        </div>
+      </div>
+  
+      <!-- Center content box -->
+      <div class="welcome-box">
+        <h2>Welcome to Musttry PH | Cooking</h2>
+        <p>
+          The ultimate destination for home cooks and food enthusiasts! Whether you're trying to save those overripe bananas, looking for a low-cost way to start a small food business, or simply craving something, you're in the right place.
+          <br /><br />
+          Bananas and its many different kinds grow so well in our country. Here, we turn everyday bananas into delicious merienda favorites and even budget-friendly meals.
+          <br /><br />
+          Our recipes are simple, whether you're cooking for yourself, your family, or potential customers. Don’t let good bananas go to waste — turn them into something amazing!
+        </p>
+      </div>
+  
+      <!-- Right vertical image loop -->
+      <div class="vertical-images right-loop">
+        <div class="image-track">
+          <img src="Ginataang Saging at Sago.jpg" alt="Loop Image 5" />
+          <img src="MARUYA.jpg" alt="Loop Image 6" />
+          <img src="Saba Langka Empanada Recipe.jpg" alt="Loop Image 7" />
+          <img src="UBE BANANA TURON.jpg" alt="Loop Image 8" />
+          <img src="Ginataang Saging at Sago.jpg" alt="Loop Image 5 duplicate" />
+          <img src="MARUYA.jpg" alt="Loop Image 6 duplicate" />
+          <img src="Saba Langka Empanada Recipe.jpg" alt="Loop Image 7 duplicate" />
+          <img src="UBE BANANA TURON.jpg" alt="Loop Image 8 duplicate" />
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
- <!-- Part 2: Infinite Scrolling Images -->
- <section class="scrolling-section">
-  <div class="scroll-column left">
-    <div class="scroll-inner scroll-up">
-      <!-- Original images -->
-      <img src="Ginataang Bilo-Bilo Recipe.jpg" alt="Banana Dish" />
-      <img src="Ginataang Saging at Sago.jpg" alt="Banana Dish" />
-      <img src="CHEESY TURON.jpg" alt="Banana Dish" />
-      <img src="Crispy Bananas Foster Spring Rolls Recipe.jpg" alt="Banana Dish" />
-      <img src="UBE BANANA TURON.jpg" alt="Banana Dish" />
-      <!-- Duplicates for seamless loop -->
-      <img src="Ginataang Bilo-Bilo Recipe.jpg" alt="Banana Dish" />
-      <img src="Ginataang Saging at Sago.jpg" alt="Banana Dish" />
-      <img src="CHEESY TURON.jpg" alt="Banana Dish" />
-      <img src="UBE BANANA TURON.jpg" alt="Banana Dish" />
-      <img src="Crispy Bananas Foster Spring Rolls Recipe.jpg" alt="Banana Dish" />
-    </div>
-  </div>
-
-  <div class="center-text-box">
-    <p>
-      Welcome to Must Try PH | Cooking — the ultimate destination for home cooks and food enthusiasts! Whether you're trying to save those overripe bananas, looking for a new twist on a classic Filipino favorite, or simply exploring something new — you're in the right place.
-      <br /><br />
-      Here we turn everyday bananas into delicious traditional favorites and even budget-friendly treats. For recipes so simple, whether you're cooking for yourself, your family, or potential customers... Don't let good bananas go to waste — turn them into something amazing!
-    </p>
-  </div>
-
-  <div class="scroll-column right">
-    <div class="scroll-inner scroll-down">
-      <!-- Original images -->
-      <img src="MARUYA.jpg" alt="Banana Dish" />
-      <img src="Ube-Banana Fried Burrito Recipe.jpg" alt="Banana Dish" />
-      <img src="Crispy Bananas Foster Spring Rolls Recipe.jpg" alt="Banana Dish" />
-      <img src="Ginataang Bilo-Bilo Recipe.jpg" alt="Banana Dish" />
-      <img src="Ginataang Saging at Sago.jpg" alt="Banana Dish" />
-      <!-- Duplicates for seamless loop -->
-      <img src="MARUYA.jpg" alt="Banana Dish" />
-      <img src="Ube-Banana Fried Burrito Recipe.jpg" alt="Banana Dish" />
-      <img src="Crispy Bananas Foster Spring Rolls Recipe.jpg" alt="Banana Dish" />
-      <img src="Ginataang Saging at Sago.jpg" alt="Banana Dish" />
-      <img src="Ginataang Bilo-Bilo Recipe.jpg" alt="Banana Dish" />
-    </div>
-  </div>
-</section>
-
-
-  <!-- Part 3: Recipe Cards -->
-  <section id="recipes" class="recipe-section">
-    <h2>Check out some of our favorite ripe banana recipes</h2>
-    <div class="recipe-grid">
-      <div class="recipe-card">01 Maruya (Banana Fritters) Recipe</div>
-      <div class="recipe-card">02 Banana Cheese Turon Recipe</div>
-      <div class="recipe-card">03 Minatamis na Saging (Caramel Sauce)</div>
-      <div class="recipe-card">04 Saba Langka Empanada</div>
-      <div class="recipe-card">05 Ginataang Bilo-Bilo</div>
-      <div class="recipe-card">06 Coffee Banana Bread</div>
-      <div class="recipe-card">07 3-Ingredient Pancake</div>
-      <div class="recipe-card">08 Peanut Butter Banana Smoothie</div>
-    </div>
   </section>
+  <!--------------------------------------- third ------------------------------------------------->
+ 
+<!-- Recipe Card Grid -->
+<div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 280px)); justify-content: center; gap: 20px; padding: 40px 20px; background-color: #fff7ec;">
 
-  <script src="home.js"></script>
-</body>
-</html>
+  <!-- Card 1 -->
+  <a href="recipe01.html" class="recipe-card" style="background-image: url('MARUYA.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative" data-price="120">
+    <div class="inner-card"></div>
+    <div class="star">★</div>
+    <div class="circle">01</div>
+    <div class="title">Maruya (Banana Fritters)</div>
+  </a>
+
+  <!-- Card 2 -->
+  <a href="recipe02.html" class="recipe-card" style="background-image: url('CHEESY TURON.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative;" data-price="200">
+    <div class="inner-card"></div>
+    <div class="star">★</div>
+    <div class="circle">02</div>
+    <div class="title" >Banana Cheese Turon</div>
+  </a>
+
+  <!-- Card 3 -->
+  <a href="recipe03.html" class="recipe-card" style="background-image: url('Crispy Bananas Foster Spring Rolls Recipe.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative;" data-price="220">
+    <div class="inner-card"></div>
+    <div class="star">★</div>
+    <div class="circle">03</div>
+    <div class="title" >Banana Pancakes</div>
+  </a>
+
+  <!-- Card 4 -->
+  <a href="recipe04.html" class="recipe-card" style="background-image: url('Ginataang Bilo-Bilo Recipe.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative;" data-price="250">
+    <div class="inner-card"></div>
+    <div class="star">★</div>
+    <div class="circle">04</div>
+    <div class="title" >Banana Muffins</div>
+  </a>
+
+  <!-- Card 5 -->
+  <a href="recipe05.html" class="recipe-card" style="background-image: url('Ginataang Saging at Sago.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative;" data-price="300">
+    <div class="inner-card"></div>
+    <div class="star">★</div>
+    <div class="circle">05</div>
+    <div class="title">Banana Cake</div>
+  </a>
+
+  <!-- Card 6 -->
+  <a href="recipe06.html" class="recipe-card" style="background-image: url('Saba Langka Empanada Recipe.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative;" data-price="400">
+    <div class="inner-card"></div>
+    <div class="star">★</div>
+    <div class="circle">06</div>
+    <div class="title" >Banana Cue</div>
+  </a>
+
+  <!-- Card 7 -->
+  <a href="recipe07.html" class="recipe-card" style="background-image: url('UBE BANANA TURON.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative;" data-price="500">
+    <div class="inner-card"></div>
+    <div class="star">★</div>
+    <div class="circle">07</div>
+    <div class="title" >Banana Ice Cream</div>
+  </a>
+
+  <!-- Card 8 -->
+  <a href="recipe08.html" class="recipe-card" style="background-image: url('Ube-Banana Fried Burrito Recipe.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative;" data-price="500">
+    <div class="inner-card"></div>
+    <div class="star">★</div>
+    <div class="circle">08</div>
+    <div class="title" >Banana Smoothie</div>
+  </a>
+</div>
+
+  
+<!-- Banana Recipe Banner Section -->
+<div style="text-align: center; background-color: #fff3dd; padding: 30px 15px; font-family: 'Agrandir', sans-serif;">
+  <h2 style="margin: 0; font-size: 1.8rem;">🍌 Musttry PH <span style="color: #a87420;">|</span> Ripe Banana Recipes on a Budget</h2>
+  <p style="margin-top: 8px; font-size: 16px;">Check out our top picks and adjust the slider to match your budget.</p>
+
+  <!-- Budget Slider -->
+  <div style="margin-top: 20px; max-width: 400px; margin-left: auto; margin-right: auto;">
+    <input type="range" min="50" max="500" value="150" step="10" id="budgetSlider" style="width: 100%; border-radius: 30px;">
+    <div style="margin-top: 10px; font-weight: bold; font-size: 18px;">
+      Budget: ₱<span id="budgetAmount">150</span>
+    </div>
+  </div>
+</div>
+
+<!-- Budget Script -->
+<script>
+  const slider = document.getElementById("budgetSlider");
+  const amount = document.getElementById("budgetAmount");
+  const cards = document.querySelectorAll(".recipe-card");
+
+  slider.addEventListener("input", () => {
+    const value = parseInt(slider.value);
+    amount.textContent = value;
+    cards.forEach(card => {
+      const price = parseInt(card.getAttribute("data-price"));
+      card.style.display = price <= value ? "flex" : "none";
+    });
+  });
+</script>
