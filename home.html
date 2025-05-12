@@ -34,7 +34,7 @@
 
     <div class="text-left">
       <p class="cooking">Cooking</p>
-      <h1 class="title">
+      <h1 class="title_page">
         <span class="bold-text">The Best</span><br>
         <span class="bold-text">Banana Recipes</span><br>
         <span class="bold-text">in One Place</span>
@@ -45,11 +45,11 @@
     </div>
 
     <div class="explore-recipes-container">
-      <a href="recipe.html" class="explore-recipes">Explore Recipes</a>
+      <a href="#recipe_third" class="explore-recipes">Explore Recipes</a>
     </div>
   </section>
 
-  <!----------------------- second  ------------------>
+  <!------------------------------------ second  ------------------------------------->
 
   <section class="scroll-section">
     <div class="scroll-container">
@@ -97,91 +97,68 @@
 
   <!--------------------------------------- third ------------------------------------------------->
  
-<!-- Recipe Card Grid -->
-<div class="grid-container" 
-  style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 280px)); justify-content: center; gap: 20px; padding: 40px 20px; background-color: #fff7ec;">
-
-  <!-- Card 1 -->
-  <a href="recipe01.html" class="recipe-card" style="background-image: url('MARUYA.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative" data-price="120">
-    <div class="inner-card"></div>
-    <div class="star">★</div>
-    <div class="circle">01</div>
-    <div class="title">Maruya (Banana Fritters)</div>
-  </a>
-
-  <!-- Card 2 -->
-  <a href="recipe02.html" class="recipe-card" style="background-image: url('CHEESY TURON.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative;" data-price="200">
-    <div class="inner-card"></div>
-    <div class="star">★</div>
-    <div class="circle">02</div>
-    <div class="title" >Banana Cheese Turon</div>
-  </a>
-
-  <!-- Card 3 -->
-  <a href="recipe03.html" class="recipe-card" style="background-image: url('Crispy Bananas Foster Spring Rolls Recipe.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative;" data-price="220">
-    <div class="inner-card"></div>
-    <div class="star">★</div>
-    <div class="circle">03</div>
-    <div class="title" >Banana Pancakes</div>
-  </a>
-
-  <!-- Card 4 -->
-  <a href="recipe04.html" class="recipe-card" style="background-image: url('Ginataang Bilo-Bilo Recipe.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative;" data-price="250">
-    <div class="inner-card"></div>
-    <div class="star">★</div>
-    <div class="circle">04</div>
-    <div class="title" >Banana Muffins</div>
-  </a>
-
-  <!-- Card 5 -->
-  <a href="recipe05.html" class="recipe-card" style="background-image: url('Ginataang Saging at Sago.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative;" data-price="300">
-    <div class="inner-card"></div>
-    <div class="star">★</div>
-    <div class="circle">05</div>
-    <div class="title">Banana Cake</div>
-  </a>
-
-  <!-- Card 6 -->
-  <a href="recipe06.html" class="recipe-card" style="background-image: url('Saba Langka Empanada Recipe.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative;" data-price="400">
-    <div class="inner-card"></div>
-    <div class="star">★</div>
-    <div class="circle">06</div>
-    <div class="title" >Banana Cue</div>
-  </a>
-
-  <!-- Card 7 -->
-  <a href="recipe07.html" class="recipe-card" style="background-image: url('UBE BANANA TURON.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative;" data-price="500">
-    <div class="inner-card"></div>
-    <div class="star">★</div>
-    <div class="circle">07</div>
-    <div class="title" >Banana Ice Cream</div>
-  </a>
-
-  <!-- Card 8 -->
-  <a href="recipe08.html" class="recipe-card" style="background-image: url('Ube-Banana Fried Burrito Recipe.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; color: white; text-decoration: none; height: 270px; border-radius: 18px; position: relative;" data-price="500">
-    <div class="inner-card"></div>
-    <div class="star">★</div>
-    <div class="circle">08</div>
-    <div class="title" >Banana Smoothie</div>
-  </a>
-</div>
-
-  
-<!-- Banana Recipe Banner Section -->
-<div style="text-align: center; background-color: #fff3dd; padding: 30px 15px; font-family: 'Agrandir', sans-serif;">
-  <h2 style="margin: 0; font-size: 1.8rem;">🍌 Musttry PH <span style="color: #a87420;">|</span> Ripe Banana Recipes on a Budget</h2>
-  <p style="margin-top: 8px; font-size: 16px;">Check out our top picks and adjust the slider to match your budget.</p>
-
-  <!-- Budget Slider -->
-  <div style="margin-top: 20px; max-width: 400px; margin-left: auto; margin-right: auto;">
-    <input type="range" min="50" max="500" value="150" step="10" id="budgetSlider" style="width: 100%; border-radius: 30px;">
-    <div style="margin-top: 10px; font-weight: bold; font-size: 18px;">
-      Budget: ₱<span id="budgetAmount">150</span>
+  <section class="third" id="recipe_third">
+    <div class="banner" style="letter-spacing: 0.3em">
+      Check out some of our favorite ripe banana recipes
     </div>
-  </div>
-</div>
 
+     <!-------------- Recipe cards ------------------------>
+    <div class="grid-container">
+      <a href="recipe01.html" class="recipe-card" style="background-image: url('MARUYA.jpg');" data-price="120">
+        <div class="star" data-recipe="recipe01">★</div>
+        <div class="circle">01</div>
+        <div class="title">Maruya (banana fritters) recipe</div>
+      </a>
+      <a href="recipe02.html" class="recipe-card" style="background-image: url('CHEESY TURON.jpg');" data-price="200">
+        <div class="star" data-recipe="recipe02">★</div>
+        <div class="circle">02</div>
+        <div class="title">Banana Cheese Turon Recipe</div>
+      </a>
+      <a href="recipe03.html" class="recipe-card" style="background-image: url('recipe03.jpg');" data-price="220">
+        <div class="star" data-recipe="recipe03">★</div>
+        <div class="circle">03</div>
+        <div class="title">Minatamis na Saging Recipe (Banana with Caramel Sauce)</div>
+      </a>
+      <a href="recipe04.html" class="recipe-card" style="background-image: url('Saba Langka Empanada Recipe.jpg');" data-price="250">
+        <div class="star" data-recipe="recipe04">★</div>
+        <div class="circle">04</div>
+        <div class="title">Saba Langka Empanada Recipe</div>
+      </a>
+      <a href="recipe05.html" class="recipe-card" style="background-image: url('Ginataang\ Bilo-Bilo\ Recipe.jpg');" data-price="300">
+        <div class="star" data-recipe="recipe05">★</div>
+        <div class="circle">05</div>
+        <div class="title">Ginataang Bilo-Bilo Recipe</div>
+      </a>
+      <a href="recipe06.html" class="recipe-card" style="background-image: url('recipe06.jpg');" data-price="400">
+        <div class="star" data-recipe="recipe06">★</div>
+        <div class="circle">06</div>
+        <div class="title">Coffee Banana Bread Recipe</div>
+      </a>
+      <a href="recipe07.html" class="recipe-card" style="background-image: url('recipe07.jpg');" data-price="500">
+        <div class="star" data-recipe="recipe07">★</div>
+        <div class="circle">07</div>
+        <div class="title">3-Ingredient Pacake</div>
+      </a>
+      <a href="recipe08.html" class="recipe-card" style="background-image: url('recipe08.jpg');" data-price="500">
+        <div class="star" data-recipe="recipe08">★</div>
+        <div class="circle">08</div>
+        <div class="title">Banana Smoothie</div>
+      </a>
+    </div> <!-- End of .grid-container -->
+  </section>
 
+    <!-------------------------------------- Budget section at the bottom ------------------------------------------>
+    <div class="budget-section">
+      <h2>Musttry PH &nbsp;&nbsp;|&nbsp;&nbsp; Cooking is your go-to source for budget-friendly food.</h2>
+      <p >Check out our top picks and adjust the slider to match your budget.</p>
+  
+      <div style="margin: 20px auto; max-width: 400px;">
+        <input type="range" min="50" max="500" value="150" step="10" id="budgetSlider">
+        <div style="margin-top: 10px; font-weight: bold;">
+          Budget: ₱<span id="budgetAmount">150</span>
+        </div>
+      </div>
+  
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <footer>
       <div class="footer_columns">

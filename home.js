@@ -91,37 +91,110 @@ function checkVisibility() {
     });
   }
 
-  // Explore Recipes button
-  const exploreButton = document.querySelector('.explore-recipes');
-  if (exploreButton) {
-    exploreButton.addEventListener('mouseenter', () => {
-      console.log('Explore Recipes hovered');
-    });
+  // Star functionality
+  document.querySelectorAll('.star').forEach(star => {
+    star.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const recipeId = star.getAttribute('data-recipe');
+      star.classList.toggle('favorited');
 
-    exploreButton.addEventListener('click', (event) => {
-      console.log('Explore Recipes clicked');
-      exploreButton.classList.add('clicked');
-      setTimeout(() => {
-        window.location.href = exploreButton.href;
-      }, 150);
-      event.preventDefault();
+      let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+      if (star.classList.contains('favorited')) {
+        if (!favorites.includes(recipeId)) {
+          favorites.push(recipeId);
+        }
+      } else {
+        favorites = favorites.filter(fav => fav !== recipeId);
+      }
+
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      showPopup();
+    });
+  });
+
+  // Show popup notification
+  function showPopup() {
+    let popup = document.getElementById('popupMessage');
+    if (!popup) {
+      // Create popup if it doesn't exist
+      popup = document.createElement('div');
+      popup.id = 'popupMessage';
+      popup.className = 'popup';
+      popup.textContent = 'Recipe favorites updated!';
+      document.body.appendChild(popup);
+    }
+    
+    popup.style.display = 'block';
+
+    setTimeout(() => {
+      popup.style.display = 'none';
+    }, 3000);
+  }
+
+  // Budget slider functionality
+  const budgetSlider = document.getElementById("budgetSlider");
+  const budgetAmount = document.getElementById("budgetAmount");
+  const recipeCards = document.querySelectorAll(".recipe-card");
+
+  function filterRecipesByBudget(budget) {
+    recipeCards.forEach(card => {
+      const price = parseInt(card.getAttribute("data-price"), 10);
+      if (price <= budget) {
+        card.style.display = "flex";
+        card.style.opacity = "1";
+      } else {
+        card.style.display = "none";
+        card.style.opacity = "0";
+      }
     });
   }
 
-  // Budget slider~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  const slider = document.getElementById("budgetSlider");
-  const amount = document.getElementById("budgetAmount");
-  const cards = document.querySelectorAll(".recipe-card");
-
-  if (slider && amount && cards.length > 0) {
-    slider.addEventListener("input", () => {
-      const value = parseInt(slider.value);
-      amount.textContent = value;
-      cards.forEach(card => {
-        const price = parseInt(card.getAttribute("data-price"));
-        card.style.display = price <= value ? "flex" : "none";
-      });
+  if (budgetSlider && budgetAmount) {
+    budgetSlider.addEventListener("input", () => {
+      const budgetValue = parseInt(budgetSlider.value, 10);
+      budgetAmount.textContent = budgetValue;
+      filterRecipesByBudget(budgetValue);
     });
+
+    // Initial filter
+    filterRecipesByBudget(parseInt(budgetSlider.value, 10));
   }
+
+  // Recipe card hover effects
+  document.querySelectorAll('.recipe-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * 10;
+      const rotateY = ((x - centerX) / centerX) * -10;
+
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = `rotateX(0) rotateY(0) scale(1)`;
+      card.style.transition = 'transform 0.3s ease';
+    });
+
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = 'none';
+    });
+  });
+
+  // Initialize favorites on page load
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  document.querySelectorAll('.star').forEach(star => {
+    const recipeId = star.getAttribute('data-recipe');
+    if (favorites.includes(recipeId)) {
+      star.classList.add('favorited');
+    }
+  });
 });
-
