@@ -1,39 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Welcome message
   console.log("Welcome to Must Try PH - The Best Banana Recipes!");
 
-  // Set user name from localStorage or default to Guest
   const storedName = localStorage.getItem('firstName');
   const userNameElements = document.querySelectorAll('#userName');
   userNameElements.forEach(element => {
     element.textContent = storedName ? storedName : 'Guest';
   });
 
-  // Header sticky functionality
-  const header = document.querySelector('header');
-  if (header) {
+//header sticky~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    const header = document.querySelector('header');
     const sticky = header.offsetTop;
 
     window.onscroll = function() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add('fixed');
-      } else {
-        header.classList.remove('fixed');
-      }
-      if (typeof checkVisibility === 'function') {
+        if (window.pageYOffset > sticky) {
+            header.classList.add('fixed');
+        } else {
+            header.classList.remove('fixed');
+        }
+        
         checkVisibility();
-      }
     };
 
-    if (typeof addAnimationClasses === 'function') {
-      addAnimationClasses();
-    }
-    if (typeof checkVisibility === 'function') {
-      setTimeout(checkVisibility, 100);
-    }
-  }
+    setTimeout(checkVisibility, 100);
 
-  // Sign-up button to user name and dropdown
+    // check elements are visible~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function checkVisibility() {
+  const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-left, .animate-right');
+  
+  animatedElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementBottom = element.getBoundingClientRect().bottom;
+      const windowHeight = window.innerHeight;
+      
+      if (elementTop < windowHeight - 100 && elementBottom > 0) {
+          element.classList.add('visible');
+      }
+  });
+}
+
+// sign-up button to user name ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const signupLink = document.getElementById('signupLink');
   const userMenu = document.getElementById('userMenu');
 
@@ -55,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     userMenu.appendChild(dropdownMenu);
 
-    // Dropdown on click
+    // dropdow on click ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     signupLink.addEventListener('click', function(e) {
       e.preventDefault();
       dropdownMenu.classList.toggle('show');
@@ -76,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    // Logout button
+    // Logout ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     dropdownMenu.querySelector('#logoutButton')?.addEventListener('click', function() {
       // Uncomment below if you want to clear localStorage on logout
       // localStorage.removeItem('firstName');
@@ -103,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Budget slider functionality
+  // Budget slider~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const slider = document.getElementById("budgetSlider");
   const amount = document.getElementById("budgetAmount");
   const cards = document.querySelectorAll(".recipe-card");
