@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cheesy Turon Recipe</title>
+  <link rel="stylesheet" href="recipe01.css" />
+</head>
+<body>
+  
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MAIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <div class="back-button"> <a href="home.html#recipe_third"> ⬅️ </a></div>
+
+  <main class="recipe-container">
+    <div class="header">
+      <h2>02</h2>
+      <div class="title-block">
+        <h1>Cheesy Turon <br><span>Recipe</span></h1>
+      </div>
+      <img src="CHEESY TURON.jpg" alt="Maruya" class="recipe-img" />
+    </div>
+
+    <div class="timing">
+      <div><strong>Prep Time</strong><br><span id="prep-time">30 minutes</span></div>
+      <div><strong>Cook Time</strong><br><span id="cook-time">30 minutes</span></div>
+      <div><strong>Total Time</strong><br><span id="total-time">60 minutes</span></div>
+    </div>
+
+    <div class="info">
+      <div><strong>Cuisine</strong><br>Filipino</div>
+      <div>
+        <strong>Servings: <span id="serving-value">10</span></strong>
+        <input type="range" id="serving-slider" min="1" max="20" value="6"/>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button id="made">I made it</button>
+      <button id="add">add to favorites</button>
+      <button id="remove">remove from favorites</button>
+    </div>
+
+    <section class="ingredients">
+      <h3>INGREDIENTS</h3>
+      <ul>
+        <li><span data-base="500">500</span>g Banana(sliced)</li>
+        <li><span data-base="0.5">0.5</span> g Cheese(sliced)</li>
+        <li><span data-base="20">20</span> Lumpia Wrapper (Spring Roll)</li>
+        <li><span data-base="4">4</span> tbsp Brown Sugar</li>
+        <li>Cooking Oil (to fry)</li>
+      </ul>
+    </section>
+
+    <section class="instructions">
+      <h3>INSTRUCTIONS</h3>
+      <ol id="instruction-list">
+        <li class="step" data-time="2">
+          <span class="step-number">1</span> Place the sliced banana in the spring roll wrapper and add sliced cheese.
+        </li>
+
+        <li class="step" data-time="3">
+          <span class="step-number">2</span> Preheat enough cooking oil in a pan, fry turon in batches. 
+            <br>Add some sugar, wait until the sugar caramelizes and coats the turon. Cook for a few minutes 
+            <br>until the turon turns golden brown.
+        </li>
+
+        <li class="step" data-time="5">
+          <span class="step-number">3</span> Preheat enough cooking oil in a pan, fry turon in batches. 
+            <br>Add some sugar, wait until the sugar caramelizes and coats the turon. 
+            <br>Cook for a few minutes until the turon turns golden brown.
+        </li>
+        
+        <!-- Step 4 Alternative with Cute Timer -->
+  <li class="step" data-step="4-alt">  
+    <div class="cute-timer">
+      <div class="emoji-clock" id="emoji-clock">
+        ⏰
+        <div class="face">
+          <div class="eye left-eye"></div>
+          <div class="eye right-eye"></div>
+          <div class="mouth"></div>
+        </div>
+      </div>
+      <div class="time-display" id="clock-display">00:00</div>
+      <div class="controls">
+        <button id="start-timer">Start</button>
+        <button id="pause-timer">Pause</button>
+        <button id="reset-timer">Reset</button>
+      </div>
+    </div>
+  </li>
+
+  
+        <li class="step" data-time="7">
+          <span class="step-number">4</span> Move cooked turon to a strainer to let excess oil drain. Serve and enjoy eating!
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <script src="recipe01.js"></script>
+
+  </body>
+</html>

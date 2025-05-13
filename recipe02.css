@@ -1,0 +1,320 @@
+*, ::before, 
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+  
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #a99e96;
+    color: #333;
+    overflow-x: hidden;
+}
+  
+  /* STICKY~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  header {
+    background-color: rgba(245, 245, 239, 0.95); 
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  
+  header.sticky {
+    padding: 5px;
+    background-color: rgba(245, 245, 239, 0.95); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    top: -10rem;
+  }
+  
+  header .logo {
+    font-family: 'Shrikhand', cursive;
+    font-size: 1.3rem;
+    color: #414b3b;
+    animation: fadeInLeft 1s ease-out;
+    margin-left: 2rem;
+  }
+  
+  header .logo:hover {
+    color: #dab347;
+    cursor: pointer;
+  }
+  
+  .pages {
+    display: flex;
+    gap: 1rem;
+    animation: fadeInRight 1s ease-out;
+  }
+  
+  .pages a {
+    text-decoration: none;
+    color: #414b3b;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    margin-right: 2rem;
+  }
+  
+  .pages a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #414b3b;
+    transition: width 0.3s ease;
+  }
+  
+  .pages a:hover {
+    transform: translateY(-2px);
+    color: #c4843c;
+  }
+  
+  .pages a:hover::after {
+    width: 100%;
+  }
+  
+  /* DROPDOWN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgba(245, 245, 239, 0.95);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1001;
+    margin-top: 5px;
+    right: 0;
+    min-width: 150px;
+    transition: all 0.3s ease;
+  }
+  
+  .dropdown-menu .menu-item {
+    padding: 5px;
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+  }
+  
+  .dropdown-menu .menu-item:hover {
+    background-color: #f0ebe0;
+    color: #dab347;
+  }
+  
+  .dropdown-menu.show {
+    display: block;
+  }
+  
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~` */
+    
+  .back-button {
+    font-size: 30px;
+    cursor: pointer;
+    margin: 20px 0;
+  }
+  
+  .recipe-container {
+    background: #a99e96;
+    padding: 25px;
+    border-radius: 18px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+    
+  .title-block h1 {
+    font-size: 24px;
+  }
+  
+  .recipe-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  .timing,
+  .info {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    text-align: center;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    padding: 10px 0;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #f5d76e;
+    font-weight: bold;
+  }
+  
+  .ingredients, .instructions {
+    margin-top: 25px;
+  }
+  
+  .ingredients h3, .instructions h3 {
+    border-bottom: 2px solid #333;
+    margin-bottom: 10px;
+  }
+  
+  ul li, ol li {
+    margin: 8px 0;
+    line-height: 1.6;
+  }
+  
+  /* Existing styles */
+  
+  .step-number {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #d3c163;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .step.completed .step-number {
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  .step.completed {
+    text-decoration: line-through;
+    color: #999;
+  }
+  
+  .step {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .cute-timer {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .emoji-clock {
+    position: relative;
+    font-size: 60px;
+    display: inline-block;
+    margin: 10px auto;
+    animation: bounce 2s infinite ease-in-out;
+  }
+  
+  .face {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+  }
+  
+  .eye {
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    animation: blink 3s infinite;
+  }
+  
+  .left-eye {
+    left: 15px;
+    top: 15px;
+  }
+  
+  .right-eye {
+    right: 15px;
+    top: 15px;
+  }
+  
+  .mouth {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    border: 2px solid black;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: smile 2s infinite;
+  }
+  
+  .time-display {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .controls button {
+    margin: 5px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ffc107;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .controls button:hover {
+    background-color: #f0b400;
+  }
+  
+  @keyframes blink {
+    0%, 90%, 100% {
+      height: 8px;
+    }
+    95% {
+      height: 1px;
+    }
+  }
+  
+  @keyframes smile {
+    0%, 100% {
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      transform: translateX(-50%) scale(1.2);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+  
