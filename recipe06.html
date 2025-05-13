@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MTPH | Banana Coffee Bread</title>
+    <link rel="stylesheet" href="recipe06.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Shrikhand&display=swap">
+</head>
+
+<body>
+
+    <header id="header">
+        <div id="logo" class="logo">Must<br>Try&nbsp;PH</div>      
+
+        <nav class="pages">
+            <a href="home.html"><strong>Home</strong></a>
+            <a href="about_us.html"><strong>About</strong></a>
+            <a href="about_us.html#contact_page"><strong>Contact</strong></a>
+
+            <div class="user_menu" id="userMenu">
+                <a href="sign-up.html" id="signupLink"><strong>Sign-up</strong></a>
+            </div>
+            
+        </nav>
+    </header>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MAIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <main>
+        <section class="buttons"> 
+            <a class="back" href="recipe.html"><strong>←</strong> Back to Recipes</a>
+            <img src="star.jpg" alt="Add to favorites" class="star" id="star" > 
+        </section>
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~RECIPE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <section class="container">
+            <div class="header">
+                <h1>06<br>Banana Coffee Bread</h1>
+                <img class="recipe-image" src="banana coffee bread.jpg" alt="Banana Coffee Bread" data-tooltip="Add to favorites">
+            </div>
+            <hr>
+            <div class="info-grid">
+                <div>
+                    <div class="label">Prep Time</div>
+                    <div id="prepTime">25 minutes</div>
+                </div>
+                <div>
+                    <div class="label">Cook Time</div>
+                    <div id="cookTime">50 minutes</div>
+                </div>
+                <div>
+                    <div class="label">Total Time</div>
+                    <div id="totalTime">1 hour 15 minutes</div>
+                </div>
+            </div>
+            <hr>
+            <div class="info-grid">            
+                <div>
+                    <div class="label">Course</div>
+                    <div>Dessert, Snacks/Merienda</div>
+                </div>
+                <div>
+                    <div class="label">Cuisine</div>
+                    <div>American</div>
+                </div>
+                <div class="servings-container">
+                    <div class="label">Servings</div>
+                    <div id="servings">8</div>
+                    <input type="range" min="1" max="10" value="8" class="slider" id="servingsSlider">
+                </div>
+            </div>
+
+            <section class="ingredients">
+                <h2>Ingredients</h2>
+                <ul id="ingredientsList">
+                    <li>1/2 cup unsalted butter, melted</li>
+                    <li>1 cup ripe bananas (about 4 bananas), mashed</li>
+                    <li>1/2 cup sour cream</li>
+                    <li>1/4 cup coffee liqueur</li>
+                    <li>1 tablespoon instant espresso powder</li>
+                    <li>1 cup brown sugar (and extra for topping)</li>
+                    <li>2 large eggs</li>
+                    <li>1 1/2 cups all-purpose flour</li>
+                    <li>1 teaspoon baking soda</li>
+                    <li>1/2 teaspoon salt</li>
+                </ul>
+            </section>
+            
+            <section class="steps">
+                <h2>Instructions</h2>
+                <ol>
+                    <li><strong>Preheat the oven:</strong> Preheat your oven to 350°F (180°C). Line a 9x5-inch loaf pan with parchment paper,
+                         leaving an overhang on each side. Set aside.</li>
+                    <li><strong>Mix the wet ingredients:</strong> Combine butter, bananas, sour cream, coffee liqueur, and espresso powder
+                         in a bowl and whisk until smooth. Add brown sugar and stir until combined. Add eggs one at a time, mixing thoroughly
+                          after each addition.</li>
+                    <li><strong>Combine the dry ingredients:</strong> Sift flour, baking soda, and salt into the wet mixture. Fold the dry
+                         ingredients into the batter just until combined. Be careful not to overmix.</li>
+                    <li><strong>Bake:</strong> Pour the batter into the prepared pan, sprinkle with extra brown sugar, 
+                        and bake for 50-60 minutes or until a toothpick inserted into the center comes out clean.
+                    <br><div class="timer">
+                            <button onclick="startTimer(this)">Start</button>
+                            <button onclick="pauseTimer(this)">Pause</button>
+                            <button onclick="resetTimer(this)">Reset</button>
+                            <span class="time">60:00</span>
+                        </div></li>
+                    <li><strong>Cool:</strong> Remove the banana bread from the pan using the parchment paper overhang. 
+                        Transfer to a cooling rack and cool for 5 minutes before slicing with a serrated knife.
+                    <br><div class="timer">
+                            <button onclick="startTimer(this)">Start</button>
+                            <button onclick="pauseTimer(this)">Pause</button>
+                            <button onclick="resetTimer(this)">Reset</button>
+                            <span class="time">00:05</span>
+                        </div></li>
+                </ol>
+            </section>
+
+            <section class="notes">
+                <h2>Notes</h2>
+                <p>Be careful not to overmix the batter. Overmixing can yield tough or chewy banana bread. Keep it soft and tender by folding the dry ingredients into the wet until just mixed.</p>
+            </section>
+        </section>
+    </main>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <footer>
+        <div class="footer_columns">
+            <div class="footer-column">
+                <div class="logo">Must<br>Try &nbsp;PH</div>     
+                <p>Follow us </p>
+
+                <div class="social_media">
+                    <img src="facebook.jpg" alt="facebook" width="20" height="30">
+                    <img src="instagram.jpg" alt="instagram" width="30" height="30">
+                    <img src="pinterest.jpg" alt="pinterest" width="30" height="30">
+                    <img src="tiktok.jpg" alt="tiktok" width="25" height="30">
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="about_us.html#contact_page">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <ul>
+                    <li><p>Privacy Policy</p></li>
+                    <li><p>Terms & Conditions</p></li>
+                    <li><p>Disclaimer</p></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 MustTryPH. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="recipe06.js"></script>
+</body>
+</html>
