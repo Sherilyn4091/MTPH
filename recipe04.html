@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MTPH | Peanut Butter Banana Smoothie</title>
+    <link rel="stylesheet" href="recipe04.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Shrikhand&display=swap">
+</head>
+
+<body>
+
+    <header id="header">
+        <div id="logo" class="logo">Must<br>Try&nbsp;PH</div>      
+
+        <nav class="pages">
+            <a href="home.html"><strong>Home</strong></a>
+            <a href="about_us.html"><strong>About</strong></a>
+            <a href="about_us.html#contact_page"><strong>Contact</strong></a>
+
+            <div class="user_menu" id="userMenu">
+                <a href="sign-up.html" id="signupLink"><strong>Sign-up</strong></a>
+            </div>
+            
+        </nav>
+    </header>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MAIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <main>
+        <section class="buttons"> 
+            <a class="back" href="recipe.html"><strong>←</strong> Back to Recipes</a>
+            <img src="star.jpg" alt="Add to favorites" class="star" id="star" > 
+        </section>
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~RECIPE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <section class="container">
+            <div class="header">
+                <h1>04<br>Saba Langka Empanada</h1>
+                <img class="recipe-image" src="Saba Langka Empanada Recipe.jpg" alt="Saba Langka Empanada" data-tooltip="Add to favorites">
+            </div>
+            <hr>
+            <div class="info-grid">
+                <div>
+                    <div class="label">Prep Time</div>
+                    <div id="prepTime">1 hour 30 minutes</div>
+                </div>
+                <div>
+                    <div class="label">Cook Time</div>
+                    <div id="cookTime">45 minutes</div>
+                </div>
+                <div>
+                    <div class="label">Total Time</div>
+                    <div id="totalTime">2 hours 30 minutes</div>
+                </div>
+            </div>
+            <hr>
+            <div class="info-grid">            
+                <div>
+                    <div class="label">Course</div>
+                    <div>Snacks/Merienda</div>
+                </div>
+                <div>
+                    <div class="label">Cuisine</div>
+                    <div>Filipino</div>
+                </div>
+                <div class="servings-container">
+                    <div class="label">Servings</div>
+                    <div id="servings">4</div>
+                    <input type="range" min="1" max="10" value="5" class="slider" id="servingsSlider">
+                </div>
+            </div>
+
+            <section class="ingredients">
+                <h2>Ingredients</h2>
+                <ul id="ingredientsList">
+                    <li>1.11 cups all-purpose flour</li>
+                    <li>0.28 teaspoon Baking soda</li>
+                    <li>0.28 teaspoon baking powder</li>
+                    <li>0.21 teaspoon Salt</li>
+                    <li>0.28 Cup unsalted butter, cold, cubed</li>
+                    <li>1.11 large egg yolks</li>
+                    <li>3.33-3.89 tablespoons cold water</li>
+                    <li>0.35 cups brown sugar</li>
+                    <li>0.28 Cup water</li>
+                    <li>0.07 teaspoon Salt</li>
+                    <li>27.78 Grams ripe jackfruit (langka), diced</li>
+                    <li>1.94 pieces ripe saba bananas, diced</li>
+                    <li>0.28 large Egg</li>
+                    <li>0.83 tablespoons fresh milk</li>
+                    <li>Cooking oil for deep-frying</li>
+                </ul>
+            </section>
+            
+            <section class="steps">
+                <h2>Instructions</h2>
+                <ol>
+                    <li>
+                        Make the empanada dough: In a large bowl, sift together all-purpose flour, baking soda, baking powder, and salt. Add in the butter and egg yolks. Cut the butter into the flour using two forks or knives until the dough has a grainy texture without large chunks of butter. Add in cold water, one tablespoon at a time, and mix. Place dough onto a clean kitchen surface and knead until the dough is smooth. Divide the dough into two. Cover with a kitchen towel, and set aside. Let it rest for at least 1 hour.
+                    </li>
+                    
+                    <li>
+                        Make the filling: In a saucepan over high heat, mix together brown sugar, water, salt, and langka. When sugar is dissolved, let the mixture boil then start stirring to keep from burning. Once the langka is cooked until tender, about 20-25 minutes, add your saba and continue stirring. Keep cooking until saba is cooked and the sauce has turned into jelly. Set aside and let cool for an hour. To cool it faster, have an electric fan directed at the filling. Once cool, you may refrigerate in an airtight container until ready to make empanadas.
+                        <div class="timer">
+                            <button onclick="startTimer(this)">Start</button>
+                            <button onclick="pauseTimer(this)">Pause</button>
+                            <button onclick="resetTimer(this)">Reset</button>
+                            <span class="time">00:30</span>
+                        </div>
+                    </li>
+                    <li>
+                        On a floured surface, gently knead your rested empanada dough for thirty seconds. Roll out one dough ball into a rectangle shape until about 1/8-inch thick. Cut out nine 4 ½-inch circles with a cookie cutter or a large bowl. Sprinkle each circle with flour, pile the circles together, and set aside, covered. Knead the leftover dough together, adding a drop of water as needed if too dry. Once the dough is smooth again, roll it out again to cut out more circles. This time, incorporate the leftover dough by kneading into the second dough ball. Repeat the process with the other dough ball until you have about 18 circles. Save any leftover dough that’s too small to form empanadas for another use.
+                    </li>
+                    <li>
+                        Once ready to fill, place around 2 tablespoons filling at the center of a dough circle, leaving at least 3/4-inch on all sides. With both hands under the dough, bring the edges together while pushing in the filling. Place the dough on the counter so that it can stand, edges up. Pinch the edges with your fingers and seal together. Tilt to one side and crimp edges with a fork. Repeat with all the remaining circles.
+                    </li>
+                    <li>
+                        In a large frying pan, heat 3 inches of oil on high heat. While the oil is heating, in a bowl, lightly whisk a large egg and fresh milk together for your egg wash. Brush on both sides of formed empanadas. To test the heat of the oil, drop a pinch of leftover empanada dough. The dough should sink but not touch the surface, linger in the middle for some time before rising to the surface, and slowly turn golden brown. If it browns too quickly, lower your heat. Once oil is hot enough, fry empanadas, flipping occasionally until evenly golden brown. Drain on paper towels. Serve hot.
+                    </li>
+                </ol>
+            </section>
+        </section>
+    </main>
+
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <footer>
+            <div class="footer_columns">
+
+                <div class="footer-column">
+                    <div class="logo">Must<br>Try &nbsp;PH</div>     
+                    <p>Follow us </p>
+
+                    <div class="social_media">
+                        <img src="facebook.jpg" alt="facebook" width="20" height="30">
+                        <img src="instagram.jpg" alt="instagram" width="30" height="30">
+                        <img src="pinterest.jpg" alt="pinterest" width="30" height="30">
+                        <img src="tiktok.jpg" alt="tiktok" width="25" height="30">
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="about_us.html#contact_page">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <ul>
+                        <li><p>Privacy Policy</p></li>
+                        <li><p>Terms & Conditions</p></li>
+                        <li><p>Disclaimer</p></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 MustTryPH. All rights reserved.</p>
+            </div>
+         </footer>
+
+    <script src="recipe04.js"></script>
+</body>
+</html>
+
+
