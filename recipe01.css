@@ -5,8 +5,8 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background: #fdf4e3;
+  font-family: 'Poppins', sans-serif;
+  background: #a99e96;
   color: #333;
   padding: 20px;
 }
@@ -14,7 +14,7 @@ body {
 /* STICKY~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 header {
   background-color: rgba(245, 245, 239, 0.95); 
-  padding: 10px 0;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,21 +26,26 @@ header {
   z-index: 1000;
 }
 
-header.sticky {
+header.fixed {
+  position: fixed;
   padding: 5px;
-  background-color: rgba(245, 245, 239, 0.95); 
+  background-color: rgba(245, 245, 239, 0.95);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-header .logo {
+header .logo a{
   font-family: 'Shrikhand', cursive;
   font-size: 1.3rem;
   color: #414b3b;
   animation: fadeInLeft 1s ease-out;
-  margin-left: 2rem;
+  text-decoration: none;
+  text-align: left;
+  position: relative;
+  z-index: 1000;
+  font-display: none;
 }
 
-header .logo:hover {
+header .logo a:hover {
   color: #dab347;
   cursor: pointer;
 }
@@ -117,15 +122,17 @@ header .logo:hover {
   font-size: 30px;
   cursor: pointer;
   margin: 20px 0;
+  text-decoration: none !important;
 }
 
 .recipe-container {
   background: #fff9e5;
-  padding: 25px;
+  padding: 45px;
   border-radius: 18px;
   max-width: 700px;
   margin: auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border: 0.1rem solid #000000;
 }
 
 .header {

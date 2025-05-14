@@ -10,26 +10,10 @@
 
 <body>
 
-    <header id="header">
-        <div id="logo" class="logo">Must<br>Try&nbsp;PH</div>      
-
-        <nav class="pages">
-            <a href="home.html"><strong>Home</strong></a>
-            <a href="about_us.html"><strong>About</strong></a>
-            <a href="about_us.html#contact_page"><strong>Contact</strong></a>
-
-            <div class="user_menu" id="userMenu">
-                <a href="sign-up.html" id="signupLink"><strong>Sign-up</strong></a>
-            </div>
-            
-        </nav>
-    </header>
-
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MAIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <main>
         <section class="buttons"> 
             <a class="back" href="home.html#recipe_third"><strong>←</strong> Back to Recipes</a>
-            <img src="star.jpg" alt="Add to favorites" class="star" id="star" > 
         </section>
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~RECIPE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -108,12 +92,26 @@
                          about 20-25 minutes, add your saba and continue stirring. Keep cooking until saba is cooked and the sauce has 
                          turned into jelly. Set aside and let cool for an hour. To cool it faster, have an electric fan directed at the 
                          filling. Once cool, you may refrigerate in an airtight container until ready to make empanadas.
-                        <br><div class="timer">
+                        <br>
+                        
+                        <div class="cute-timer">
+                            <div class="emoji-clock" id="emoji-clock">
+                              ⏰
+                              <div class="face">
+                                <div class="eye left-eye"></div>
+                                <div class="eye right-eye"></div>
+                                <div class="mouth"></div>
+                              </div>
+                            </div>
+                          </div>                      
+
+                        <div class="timer">
                             <button onclick="startTimer(this)">Start</button>
                             <button onclick="pauseTimer(this)">Pause</button>
                             <button onclick="resetTimer(this)">Reset</button>
                             <span class="time">25:00</span>
                         </div>
+                        
                     </li>
                     <li>
                         On a floured surface, gently knead your rested empanada dough for thirty seconds. Roll out one dough ball into

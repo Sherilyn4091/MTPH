@@ -10,26 +10,10 @@
 
 <body>
 
-    <header id="header">
-        <div id="logo" class="logo">Must<br>Try&nbsp;PH</div>      
-
-        <nav class="pages">
-            <a href="home.html"><strong>Home</strong></a>
-            <a href="about_us.html"><strong>About</strong></a>
-            <a href="about_us.html#contact_page"><strong>Contact</strong></a>
-
-            <div class="user_menu" id="userMenu">
-                <a href="sign-up.html" id="signupLink"><strong>Sign-up</strong></a>
-            </div>
-            
-        </nav>
-    </header>
-
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ BUTTONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <main>
         <section class="buttons"> 
             <a class="back" href="home.html#recipe_third"><strong>←</strong> Back to Recipes</a>
-            <img src="star.jpg" alt="Add to favorites" class="star" id="star" > 
         </section>
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~RECIPE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -89,6 +73,16 @@
                         Spoon batter into the hot butter and cook 
                         until bubbles form and the edges are dry, 2 to 3 minutes. Flip and cook until browned on the 
                         other side, 2 to 3 minutes. Repeat with remaining batter. <br>
+                        <div class="cute-timer">
+                            <div class="emoji-clock" id="emoji-clock">
+                              ⏰
+                              <div class="face">
+                                <div class="eye left-eye"></div>
+                                <div class="eye right-eye"></div>
+                                <div class="mouth"></div>
+                              </div>
+                            </div>
+                          </div>                      
                         <div class="timer">
                             <button onclick="startTimer(this)">Start</button>
                             <button onclick="pauseTimer(this)">Pause</button>

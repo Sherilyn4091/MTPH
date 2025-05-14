@@ -126,6 +126,68 @@ header .logo:hover {
 }
   
 /*MAIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.cute-timer {
+    text-align: relative;
+    margin-top: 10px;
+  }
+  
+  .emoji-clock {
+    position: relative;
+    font-size: 60px;
+    display: inline-block;
+    margin: 10px auto;
+    animation: bounce 2s infinite ease-in-out;
+  }
+  
+  .face {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+  }
+  
+  .eye {
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    animation: blink 3s infinite;
+  }
+  
+  .left-eye {
+    left: 15px;
+    top: 15px;
+  }
+  
+  .right-eye {
+    right: 15px;
+    top: 15px;
+  }
+  
+  .mouth {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    border: 2px solid black;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: smile 2s infinite;
+  }
+  
+  .time-display {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+
+
 main {
     display: flex;
     flex-direction: column;
