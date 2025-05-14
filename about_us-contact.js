@@ -1,18 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
     const storedName = localStorage.getItem('firstName');
-    if (storedName) {
-        const userNameElements = document.querySelectorAll('#userName');
-        userNameElements.forEach(element => {
-            element.textContent = storedName;
-        });
-    } else {
-        const userNameElements = document.querySelectorAll('#userName');
-        userNameElements.forEach(element => {
-            element.textContent = 'Guest';
-        });
-    }  
+    
+    // Check if user is logged in
+    const isLoggedIn = storedName && storedName !== 'Guest';
+    
+    // Update any userName elements on the page
+    const userNameElements = document.querySelectorAll('#userName');
+    userNameElements.forEach(element => {
+        element.textContent = storedName || 'Guest';
+    });
 
-//header sticky~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // Header sticky functionality ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     const header = document.querySelector('header');
     const sticky = header.offsetTop;
     
@@ -29,68 +27,87 @@ document.addEventListener('DOMContentLoaded', function() {
     addAnimationClasses();
     setTimeout(checkVisibility, 100);
 
-// sign-up button to user name ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // Setup user dropdown menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     const signupLink = document.getElementById('signupLink');
     const userMenu = document.getElementById('userMenu');
     
     if (signupLink && userMenu) {
-        const userName = storedName || 'Guest';
-        
-        signupLink.innerHTML = `<strong>${userName} ▼</strong>`;
-        signupLink.href = "#";
-    
+        // Clear any existing dropdown
+        const existingDropdown = userMenu.querySelector('.dropdown-menu');
+        if (existingDropdown) {
+            existingDropdown.remove();
+        }
+
+        // Create dropdown menu
         const dropdownMenu = document.createElement('div');
         dropdownMenu.className = 'dropdown-menu';
-        
-        const currentPage = window.location.pathname.split('/').pop();
-        
-        dropdownMenu.innerHTML = `
-            <div class="menu-item" id="viewProfileButton"><strong>View Profile</strong></div>
-            <div class="menu-item" id="logoutButton"><strong>Log-out</strong></div>
-        `;
-        
+
+        if (isLoggedIn) {
+            // User is logged in - show first name with dropdown
+            signupLink.innerHTML = `<strong>${storedName} ▼</strong>`;
+            signupLink.href = "#";
+            
+            dropdownMenu.innerHTML = `
+                <div class="menu-item" id="viewProfileButton"><strong>View Profile</strong></div>
+                <div class="menu-item" id="logoutButton"><strong>Log-out</strong></div>
+            `;
+        } else {
+            // User is guest - show "Guest" with dropdown
+            signupLink.innerHTML = `<strong>Guest ▼</strong>`;
+            signupLink.href = "#";
+            
+            dropdownMenu.innerHTML = `
+                <div class="menu-item" onclick="window.location.href='log-in.html'"><strong>Log in</strong></div>
+                <div class="menu-item" onclick="window.location.href='sign-up.html'"><strong>Sign-up</strong></div>
+            `;
+        }
+
         userMenu.appendChild(dropdownMenu);
-                
-        // dropdow on click ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        
+        // Dropdown toggle on click ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         signupLink.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             dropdownMenu.classList.toggle('show');
         });
         
+        // Close dropdown when clicking outside
         document.addEventListener('click', function(e) {
             if (!userMenu.contains(e.target)) {
                 dropdownMenu.classList.remove('show');
             }
         });
-                        
-        const viewProfileButton = document.getElementById('viewProfileButton');
-        if (viewProfileButton) {
-            viewProfileButton.addEventListener('click', function() {
-                if (currentPage !== 'profile.html') {
-                    window.location.href = 'profile.html';
-                } else {
-                    dropdownMenu.classList.remove('show');
-                }
-            });
-        }
         
-        // Logout ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        const logoutButton = document.getElementById('logoutButton');
-        if (logoutButton) {
-            logoutButton.addEventListener('click', function() {
-                // localStorage.removeItem('firstName');
-                // localStorage.removeItem('lastName');
-                // localStorage.removeItem('email');
-                window.location.href = 'log-in.html';
-            });
+        // Setup event listeners for logged-in user actions
+        if (isLoggedIn) {
+            const viewProfileButton = document.getElementById('viewProfileButton');
+            if (viewProfileButton) {
+                viewProfileButton.addEventListener('click', function() {
+                    const currentPage = window.location.pathname.split('/').pop();
+                    if (currentPage !== 'profile.html') {
+                        window.location.href = 'profile.html';
+                    } else {
+                        dropdownMenu.classList.remove('show');
+                    }
+                });
+            }
+            
+            // Logout functionality ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            const logoutButton = document.getElementById('logoutButton');
+            if (logoutButton) {
+                logoutButton.addEventListener('click', function() {
+                    localStorage.removeItem('firstName');
+                    // localStorage.removeItem('lastName');
+                    // localStorage.removeItem('email');
+                    window.location.href = 'log-in.html';
+                });
+            }
         }
     }
-
 });
 
-// animations~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Animations ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function addAnimationClasses() {
-
     document.querySelectorAll('.team_heading, .contact_page h1').forEach(el => {
         el.classList.add('animate-on-scroll');
     });
@@ -112,7 +129,7 @@ function addAnimationClasses() {
     });
 }
 
-// check elements are visible~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Check elements are visible ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function checkVisibility() {
     const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-left, .animate-right');
     
@@ -127,7 +144,7 @@ function checkVisibility() {
     });
 }
 
-// form submission~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Form submission ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function sendMail() {
     const form = document.querySelector('form');
     form.addEventListener('submit', function(e) {
