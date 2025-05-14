@@ -5,10 +5,14 @@
   scroll-behavior: smooth;
 }
 
+html, body {
+  width: 100%;
+}
+
 /* STICKY~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 header {
   background-color: rgba(245, 245, 239, 0.95); 
-  padding: 5px 0;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,15 +31,18 @@ header.fixed {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-header .logo {
+header .logo a{
   font-family: 'Shrikhand', cursive;
   font-size: 1.3rem;
   color: #414b3b;
   animation: fadeInLeft 1s ease-out;
-  margin-left: 2rem;
+  text-decoration: none;
+  text-align: left;
+  position: relative;
+  z-index: 1000;
 }
 
-header .logo:hover {
+header .logo a:hover {
   color: #dab347;
   cursor: pointer;
 }
@@ -74,7 +81,6 @@ header .logo:hover {
   width: 100%;
 }
 
-
 /* DROPDOWN~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .dropdown-menu {
   display: none;
@@ -106,13 +112,11 @@ header .logo:hover {
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~MAIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
 body {
   margin: 0;
-  /* height: auto;
-  width: 100%; */
   color: #332222;
   overflow-x: hidden;
+  width: 100%;
 }
 
 video {
@@ -124,9 +128,14 @@ video {
   object-fit: cover;
   z-index: -100;
   animation: fadeIn 2s ease-out;
+  
 }
 
 .main-content {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100vh;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -171,6 +180,12 @@ video {
   position: absolute;
   bottom: 20px;
   right: 20px;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  
+  box-sizing: border-box;
+
 }
 
 .explore-recipes {
@@ -186,6 +201,10 @@ video {
   text-decoration: none;
   transition: transform 0.3s ease, background-color 0.3s ease;
   margin-bottom: 20px;
+
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .explore-recipes:hover {
@@ -193,49 +212,26 @@ video {
   transform: translateY(-5px) scale(1.05);
 }
 
-/* ---------------- LOADER ----------------- */
-/* #loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.4s ease;
-}
-
-.loader-box {
-  width: 60px;
-  height: 60px;
-  background-color: #7b4d2b;
-  animation: boxFlip 1s infinite ease-in-out;
-  border-radius: 8px;
-}
-
-@keyframes boxFlip {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    transform: rotate(90deg) scale(1.1);
-  }
-  100% {
-    transform: rotate(180deg) scale(1);
-  }
-} */
-
 /* ----------------------------------------second-------------------------------------------------- */
+
+html {
+  width: 100%;
+}
+
 .scroll-section {
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
   height: 100vh;
   background-color: #5b4f47;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 2rem;
+}
+
+::before, ::after {
+  box-sizing: border-box;
 }
 
 .scroll-container {
@@ -288,6 +284,11 @@ video {
   height: 80%;
   margin: auto;
   box-shadow: 0 0 20px rgba(0,0,0,0.15);
+
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+
 }
 
 /* ------------------------------------------------third--------------------------------------------*/
@@ -508,7 +509,7 @@ footer {
   width: 100%;
   bottom: -5rem;
   right: 0%;
-  left: -5%;
+  left: -3.5%;
   z-index: 100;
 }
 
@@ -539,7 +540,7 @@ img {
 
 .footer-column {
   color: #733d23;
-  width: 25%;
+  width: 100%;
   margin-right: 5rem;
   position: bottom;
   transition: color 0.4s;
@@ -574,8 +575,9 @@ footer .logo:hover,
   position: relative;
   padding: 1.7rem;
   background-color: #764b36;
-  width: 100rem;
-  margin-left: -2rem;
+  width: 100%;
+  margin-left: -3rem;
+  margin-right: -1%;
   margin-top: 5rem;
   margin-bottom: 3rem;
 }
@@ -592,45 +594,29 @@ footer .logo:hover,
 }
 
 @keyframes fadeInLeft {
-  from {
-      opacity: 0;
-      transform: translateX(-50px);
-  }
-  to {
-      opacity: 1;
-      transform: translateX(0);
-  }
+  from {opacity: 0;
+      transform: translateX(-50px);}
+  to {opacity: 1;
+      transform: translateX(0);}
 }
 
 @keyframes fadeInRight {
-  from {
-      opacity: 0;
-      transform: translateX(50px);
-  }
-  to {
-      opacity: 1;
-      transform: translateX(0);
-  }
+  from {opacity: 0;
+      transform: translateX(50px);}
+  to {opacity: 1;
+      transform: translateX(0);}
 }
 
 @keyframes fadeInUp {
-  from {
-      opacity: 0;
-      transform: translateY(30px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
+  from {opacity: 0;
+      transform: translateY(30px);}
+  to {opacity: 1;
+      transform: translateY(0);}
 }
 
 @keyframes fadeInDown {
-  from {
-      opacity: 0;
-      transform: translateY(-30px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
+  from {opacity: 0;
+      transform: translateY(-30px);}
+  to {opacity: 1;
+      transform: translateY(0);}
 }

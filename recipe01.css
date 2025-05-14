@@ -113,12 +113,6 @@ header .logo:hover {
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~` */
 
-.nav-links {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
 .back-button {
   font-size: 30px;
   cursor: pointer;
