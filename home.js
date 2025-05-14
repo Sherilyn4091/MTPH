@@ -18,6 +18,17 @@ localStorage.setItem('recipeData', JSON.stringify(recipeData));
 document.addEventListener('DOMContentLoaded', function () {
   console.log("Welcome to Must Try PH - The Best Banana Recipes!");
 
+      // LOADING SCREEN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      const loadingScreen = document.getElementById('loading-screen');
+      if (loadingScreen) {
+          setTimeout(() => {
+              loadingScreen.classList.add('fade-out');
+              setTimeout(() => {
+                  loadingScreen.style.display = 'none';
+              }, 1000); 
+          }, 4000);
+      }  
+
   // Check if user is logged in
   const firstName = localStorage.getItem('firstName');
   const isLoggedIn = firstName && firstName !== 'Guest';
